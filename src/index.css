@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 94%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 94%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 94%;
+
+    --primary: 250 100% 69%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 94%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 250 100% 69%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 250 100% 69%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 0 0% 94%;
+    --sidebar-primary: 250 100% 69%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 94%;
+    --sidebar-border: 0 0% 16%;
+    --sidebar-ring: 250 100% 69%;
+
+    /* Custom tokens */
+    --surface-elevated: 0 0% 10%;
+    --glow-primary: 250 100% 69%;
+  }
+
+  .dark {
+    /* Already dark by default */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(250,100%,80%)];
+  }
+
+  .glow-orb {
+    background: radial-gradient(
+      circle at center,
+      hsl(var(--glow-primary) / 0.15) 0%,
+      hsl(var(--glow-primary) / 0.05) 40%,
+      transparent 70%
+    );
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    border-color: hsl(var(--primary) / 0.5);
+    box-shadow: 0 8px 32px hsl(var(--primary) / 0.1);
+  }
+}
