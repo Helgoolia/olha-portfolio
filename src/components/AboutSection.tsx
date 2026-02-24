@@ -6,7 +6,6 @@ const skills = [
   "Design Systems",
   "Prototyping",
   "Figma",
-  "User Testing",
   "Wireframing",
   "Information Architecture",
   "Mobile Design",

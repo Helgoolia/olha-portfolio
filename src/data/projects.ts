@@ -26,7 +26,7 @@ export const projects: Project[] = [
     solution:
       "A streamlined mobile app with a clear three-step booking flow: browse → select → confirm. Key design decisions included a restaurant card system for quick scanning, a persistent bottom navigation, and a streamlined date/time picker that reduces friction in the reservation step.",
     decisions: [
-      "Card-based restaurant list with photo, rating, cuisine tags, and distance — scannable at a glance",
+      "Card-based restaurant list with photo, rating, cuisine tags, and budget level — scannable at a glance",
       "Booking flow reduced to 3 core steps: pick restaurant → choose time → confirm",
       "Visual seat selection feature — users can choose specific tables and halls on an interactive layout map",
       "Micro-interactions and animated transitions designed in Figma prototype to guide users through the flow",
@@ -81,10 +81,10 @@ export const projects: Project[] = [
     tags: ["Beauty", "Landing Page", "Lifestyle"],
     problem:
       "Beauty service businesses often have outdated or cluttered websites that don't reflect the quality of their actual service. This concept explored how a minimal, elevated landing page could position a hair salon as a premium, trustworthy brand.",
-    role: "Full UI/UX Design",
+    role: "Full UX/UI Design",
     tools: ["Figma"],
     solution:
-      "A light, soft-toned landing page using natural imagery, generous whitespace, and a warm color palette to evoke cleanliness and care. The layout guides the user naturally from brand story → services → booking CTA.",
+      "A light, soft-toned landing page using natural imagery, generous whitespace, and a warm color palette to evoke cleanliness and care. The layout guides the user naturally from services → how it works → booking CTA.",
     decisions: [
       "Warm, muted palette (cream, nude, soft brown) — approachable and premium without feeling generic",
       "Hero with full-bleed image + minimal text overlay — emotional first impression",
