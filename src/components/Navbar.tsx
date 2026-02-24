@@ -42,18 +42,33 @@ const Navbar = () => {
 
           <div className="flex items-center gap-8">
             {[
+              { label: "CV", href: "/CV.pdf" }, // Додали файл першим
               { label: "Work", id: "work" },
               { label: "About", id: "about" },
               { label: "Contact", id: "contact" },
-            ].map((item) => (
-              <button
-                key={item.id}
-                onClick={() => handleNavClick(item.id)}
-                className="text-sm font-body text-muted-foreground hover:text-foreground transition-colors duration-200"
-              >
-                {item.label}
-              </button>
-            ))}
+            ].map((item) =>
+              item.href ? (
+                /* Спеціальна лінка для CV */
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-body text-muted-foreground hover:text-foreground transition-colors duration-200"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                /* Звичайні кнопки для скролу */
+                <button
+                  key={item.id}
+                  onClick={() => handleNavClick(item.id!)}
+                  className="text-sm font-body text-muted-foreground hover:text-foreground transition-colors duration-200"
+                >
+                  {item.label}
+                </button>
+              ),
+            )}
           </div>
         </div>
       </div>

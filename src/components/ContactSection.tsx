@@ -26,17 +26,15 @@ const ContactSection = () => {
   const [ref, inView] = useInView(0.1);
 
   return (
-    <section id="contact" className="py-32 px-6">
+    <section id="contact" className="py-16 md:py-32 px-6">
       <div className="max-w-2xl mx-auto text-center">
-        <div
-          ref={ref}
-          className={inView ? "animate-fade-up" : "opacity-0"}
-        >
+        <div ref={ref} className={inView ? "animate-fade-up" : "opacity-0"}>
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
             Let's Work Together
           </h2>
           <p className="text-muted-foreground font-body text-lg mb-12">
-            Open to full-time product design roles at startups and tech companies.
+            Open to full-time product design roles at startups and tech
+            companies.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">

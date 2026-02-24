@@ -19,7 +19,7 @@ const AboutSection = () => {
   const [ref, inView] = useInView(0.1);
 
   return (
-    <section id="about" className="py-32 px-6">
+    <section id="about" className="py-16 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
         <div
           ref={ref}

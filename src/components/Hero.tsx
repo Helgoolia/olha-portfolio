@@ -8,7 +8,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 md:py-40">
+    <section className="relative min-h-screen flex items-center justify-center py-20 md:py-40">
       {/* Glow orb */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] glow-orb animate-pulse-glow pointer-events-none opacity-50 md:opacity-100" />
 
