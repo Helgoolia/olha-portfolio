@@ -12,6 +12,26 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+{
+  id: "MyDaily",
+  title: "My Daily",
+  description:
+    "A mobile productivity and time tracking app focused on task scheduling and daily activity management.",
+  type: "Mobile App · UX/UI Design",
+  tags: ["Productivity", "Time Management", "Mobile UX"],
+  problem:
+    "Many productivity apps feel overloaded with features, complex navigation, or distracting interfaces. Users often struggle to quickly organize tasks, track time, and maintain focus throughout the day without unnecessary friction.",
+  role: "Lead UX/UI Designer",
+  tools: ["Figma (prototyping)", "Photoshop", "ChatGPT"],
+  solution:
+    "A minimal and structured productivity app designed around quick task management and lightweight time tracking. The experience focuses on reducing cognitive load through clear hierarchy, simple navigation, and streamlined scheduling interactions.",
+  decisions: [
+    "Task cards designed with color-coded outlines and lightweight visual hierarchy for quick scanning",
+    "Integrated time tracking directly into task flow to reduce context switching between planning and execution",
+    "Minimal dark interface with subtle accent colors to support long-term usability and focus",
+    "Separated Today and History views to simplify daily task management and improve clarity of past activity records"
+  ]
+}
   {
     id: "book-and-bite",
     title: "Book & Bite",

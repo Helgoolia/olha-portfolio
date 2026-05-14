@@ -13,6 +13,7 @@ const ProjectCard = ({
   const [ref, inView] = useInView(0.1);
 
   const coverImages: Record<string, string> = {
+    MyDaily: "/projects/MyDaily/MyDaily_Cover.png",
     "book-and-bite": "/projects/book-and-bite/Book&Bite_Case-Cover.png",
     "lawyer-company": "/projects/LawyerLP/LawyerLP_Cover.png",
     metamorphosis: "/projects/Kafka/Kafka_Cover.png",
