@@ -55,7 +55,7 @@ const CaseStudy = () => {
             heroInView ? "animate-fade-up" : "opacity-0"
           }`}
         >
-          <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-0 flex justify-center border border-border/40 overflow-hidden">
+          <div className="rounded-xl md:rounded-2xl bg-[#16161D] p-0 flex justify-center border border-border/40 overflow-hidden">
             {isMyDaily && (
               <img
                 src="/projects/MyDaily/MyDaily_Flow.png"
@@ -179,7 +179,7 @@ const CaseStudy = () => {
         >
           {isMyDaily && (
             <>
-              <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center">
+              <div className="rounded-xl md:rounded-2xl bg-[#16161D] p-6 md:p-12 border border-border/40 flex justify-center">
                 <img
                   src="/projects/MyDaily/MyDaily_Profile.png"
                   className="w-full h-auto max-w-5xl shadow-xl rounded-xl md:rounded-2xl"
@@ -187,7 +187,7 @@ const CaseStudy = () => {
                 />
               </div>
 
-              <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center">
+              <div className="rounded-xl md:rounded-2xl bg-[#16161D] p-6 md:p-12 border border-border/40 flex justify-center">
                 <img
                   src="/projects/MyDaily/MyDaily_Tasks-Filled.png"
                   className="w-full h-auto max-w-5xl shadow-xl rounded-xl md:rounded-2xl"
@@ -196,7 +196,7 @@ const CaseStudy = () => {
               </div>
 
               <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-                <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
+                <div className="rounded-xl md:rounded-2xl bg-[#16161D] p-6 md:p-10 border border-border/40 flex items-center justify-center">
                   <img
                     src="/projects/MyDaily/MyDaily_Tasks-Details.png"
                     className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
@@ -204,7 +204,7 @@ const CaseStudy = () => {
                   />
                 </div>
 
-                <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
+                <div className="rounded-xl md:rounded-2xl bg-[#16161D] p-6 md:p-10 border border-border/40 flex items-center justify-center">
                   <img
                     src="/projects/MyDaily/MyDaily_Tasks-AI.png"
                     className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
@@ -246,7 +246,7 @@ const CaseStudy = () => {
 
           {isMyDaily && (
             <div className="space-y-8 md:space-y-12">
-              <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center">
+              <div className="rounded-xl md:rounded-2xl bg-[#16161D] p-6 md:p-12 border border-border/40 flex justify-center">
                 <img
                   src="/projects/MyDaily/MyDaily_Activity-Unnamed.png"
                   className="w-full h-auto max-w-5xl shadow-xl rounded-xl md:rounded-2xl"
@@ -255,7 +255,7 @@ const CaseStudy = () => {
               </div>
 
               <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-                <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
+                <div className="rounded-xl md:rounded-2xl bg-[#16161D] p-6 md:p-10 border border-border/40 flex items-center justify-center">
                   <img
                     src="/projects/MyDaily/MyDaily_Activity-Today.png"
                     className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
@@ -263,7 +263,7 @@ const CaseStudy = () => {
                   />
                 </div>
 
-                <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
+                <div className="rounded-xl md:rounded-2xl bg-[#16161D] p-6 md:p-10 border border-border/40 flex items-center justify-center">
                   <img
                     src="/projects/MyDaily/MyDaily_Activity-History.png"
                     className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
