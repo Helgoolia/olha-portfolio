@@ -1,17 +1,18 @@
 import { useInView } from "@/hooks/useInView";
 
 const skills = [
-  "UX Research",
-  "UI Design",
+  "Product Design",
   "Design Systems",
-  "Prototyping",
-  "Figma",
-  "Wireframing",
+  "UI Design",
+  "Visual Design",
+  "User Flows",
   "Information Architecture",
+  "Wireframing",
+  "Prototyping",
   "Mobile Design",
   "SaaS Design",
-  "Interaction Design",
-  "Visual Design",
+  "Design QA",
+  "Figma",
 ];
 
 const AboutSection = () => {

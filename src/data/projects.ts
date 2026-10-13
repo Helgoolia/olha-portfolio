@@ -38,7 +38,7 @@ export const projects: Project[] = [
     description:
       "A mobile restaurant discovery and table booking app. Full end-to-end UX/UI case study.",
     type: "Mobile App · UX/UI Design",
-    tags: ["Mobile", "Food Tech", "UX Research"],
+    tags: ["Mobile", "Food Tech", "Competitive Analysis"],
     problem:
       "Finding and booking a restaurant through existing apps feels fragmented — users switch between review platforms, mapping apps, and booking tools. Book&Bite brings discovery, reviews, and reservations into a single, intuitive mobile flow.",
     role: "Lead UX/UI Designer",
