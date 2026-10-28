@@ -55,35 +55,35 @@ const CaseStudy = () => {
           <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-0 flex justify-center border border-border/40 overflow-hidden">
             {isBookAndBite && (
               <img
-                src="/projects/book-and-bite/Book&Bite_User Flow.png"
+                src="/projects/book-and-bite/Book&Bite_User Flow.webp"
                 alt="Hero"
                 className="w-full h-auto rounded-xl md:rounded-2xl"
               />
             )}
             {isLawyerLP && (
               <img
-                src="/projects/LawyerLP/LawyerLP_Hero-Nav.png"
+                src="/projects/LawyerLP/LawyerLP_Hero-Nav.webp"
                 alt="Hero"
                 className="w-full h-auto rounded-xl md:rounded-2xl"
               />
             )}
             {isKafka && (
               <img
-                src="/projects/Kafka/Kafka_Hero.png"
+                src="/projects/Kafka/Kafka_Hero.webp"
                 alt="Hero"
                 className="w-full h-auto rounded-xl md:rounded-2xl"
               />
             )}
             {isPureHair && (
               <img
-                src="/projects/PureHair/PureHair_Hero.png"
+                src="/projects/PureHair/PureHair_Hero.webp"
                 alt="Hero"
                 className="w-full h-auto rounded-xl md:rounded-2xl"
               />
             )}
             {isMyDaily && (
               <img
-                src="/projects/MyDaily/MyDaily_Flow.png"
+                src="/projects/MyDaily/MyDaily_Flow.webp"
                 alt="Hero"
                 className="w-full h-auto rounded-xl md:rounded-2xl"
               />
@@ -161,30 +161,30 @@ const CaseStudy = () => {
           {isLawyerLP && (
             <>
               <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center">
-                <img
-                  src="/projects/LawyerLP/LawyerLP_Our-Services.png"
+                <img loading="lazy" decoding="async"
+                  src="/projects/LawyerLP/LawyerLP_Our-Services.webp"
                   className="w-full h-auto max-w-4xl shadow-lg rounded-xl md:rounded-2xl"
                   alt="Services"
                 />
               </div>
               <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center">
-                <img
-                  src="/projects/LawyerLP/LawyerLP_CTA-Steps.png"
+                <img loading="lazy" decoding="async"
+                  src="/projects/LawyerLP/LawyerLP_CTA-Steps.webp"
                   className="w-full h-auto rounded-none"
                   alt="CTA Steps"
                 />
               </div>
               <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img
-                    src="/projects/LawyerLP/LawyerLP_Hero-Nav-Mobile.png"
+                  <img loading="lazy" decoding="async"
+                    src="/projects/LawyerLP/LawyerLP_Hero-Nav-Mobile.webp"
                     className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
                     alt="Mobile Hero"
                   />
                 </div>
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img
-                    src="/projects/LawyerLP/LawyerLP_Experts-Mobile.png"
+                  <img loading="lazy" decoding="async"
+                    src="/projects/LawyerLP/LawyerLP_Experts-Mobile.webp"
                     className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
                     alt="Mobile Experts"
                   />
@@ -196,23 +196,23 @@ const CaseStudy = () => {
           {isKafka && (
             <>
               <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center">
-                <img
-                  src="/projects/Kafka/Kafka_Illustration-Detail.png"
+                <img loading="lazy" decoding="async"
+                  src="/projects/Kafka/Kafka_Illustration-Detail.webp"
                   className="w-full h-auto max-w-5xl shadow-xl rounded-xl md:rounded-2xl"
                   alt="Detail"
                 />
               </div>
               <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img
-                    src="/projects/Kafka/Kafka_Hero-Mobile.png"
+                  <img loading="lazy" decoding="async"
+                    src="/projects/Kafka/Kafka_Hero-Mobile.webp"
                     className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
                     alt="Mobile Hero"
                   />
                 </div>
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img
-                    src="/projects/Kafka/Kafka_Story-Mobile.png"
+                  <img loading="lazy" decoding="async"
+                    src="/projects/Kafka/Kafka_Story-Mobile.webp"
                     className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
                     alt="Mobile Story"
                   />
@@ -224,23 +224,23 @@ const CaseStudy = () => {
           {isPureHair && (
             <>
               <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center">
-                <img
-                  src="/projects/PureHair/PureHair_Services.png"
+                <img loading="lazy" decoding="async"
+                  src="/projects/PureHair/PureHair_Services.webp"
                   className="w-full h-auto max-w-4xl shadow-lg rounded-xl md:rounded-2xl"
                   alt="Services"
                 />
               </div>
               <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img
-                    src="/projects/PureHair/PureHair_Services-Mobile.png"
+                  <img loading="lazy" decoding="async"
+                    src="/projects/PureHair/PureHair_Services-Mobile.webp"
                     className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
                     alt="Mobile Services"
                   />
                 </div>
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img
-                    src="/projects/PureHair/PureHair_How-It-Works-Mobile.png"
+                  <img loading="lazy" decoding="async"
+                    src="/projects/PureHair/PureHair_How-It-Works-Mobile.webp"
                     className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
                     alt="Mobile How It Works"
                   />
@@ -253,38 +253,38 @@ const CaseStudy = () => {
             <div className="space-y-8 md:space-y-12">
               <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img
-                    src="/projects/book-and-bite/Book&Bite_Home.png"
+                  <img loading="lazy" decoding="async"
+                    src="/projects/book-and-bite/Book&Bite_Home.webp"
                     className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
                     alt="Home"
                   />
                 </div>
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img
-                    src="/projects/book-and-bite/Book&Bite_Restaurant-Page.png"
+                  <img loading="lazy" decoding="async"
+                    src="/projects/book-and-bite/Book&Bite_Restaurant-Page.webp"
                     className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
                     alt="Restaurant"
                   />
                 </div>
               </div>
               <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                <img
-                  src="/projects/book-and-bite/Book&Bite_Booking-Flow.png"
+                <img loading="lazy" decoding="async"
+                  src="/projects/book-and-bite/Book&Bite_Booking-Flow.webp"
                   className="w-full h-auto rounded-none"
                   alt="Booking Flow"
                 />
               </div>
               <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img
-                    src="/projects/book-and-bite/Book&Bite_Layout-Selection.png"
+                  <img loading="lazy" decoding="async"
+                    src="/projects/book-and-bite/Book&Bite_Layout-Selection.webp"
                     className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
                     alt="Layout Selection"
                   />
                 </div>
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img
-                    src="/projects/book-and-bite/Book&Bite_Confirmation.png"
+                  <img loading="lazy" decoding="async"
+                    src="/projects/book-and-bite/Book&Bite_Confirmation.webp"
                     className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
                     alt="Confirmation"
                   />
@@ -296,16 +296,16 @@ const CaseStudy = () => {
             <>
               {/* Large images */}
               <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center">
-                <img
-                  src="/projects/MyDaily/MyDaily_Profile.png"
+                <img loading="lazy" decoding="async"
+                  src="/projects/MyDaily/MyDaily_Profile.webp"
                   className="w-full h-auto max-w-5xl shadow-xl rounded-xl md:rounded-2xl"
                   alt="Profile"
                 />
               </div>
 
               <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center">
-                <img
-                  src="/projects/MyDaily/MyDaily_Tasks-Filled.png"
+                <img loading="lazy" decoding="async"
+                  src="/projects/MyDaily/MyDaily_Tasks-Filled.webp"
                   className="w-full h-auto max-w-5xl shadow-xl rounded-xl md:rounded-2xl"
                   alt="Tasks Filled"
                 />
@@ -314,16 +314,16 @@ const CaseStudy = () => {
               {/* Two mobile screens */}
               <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img
-                    src="/projects/MyDaily/MyDaily_Tasks-Details.png"
+                  <img loading="lazy" decoding="async"
+                    src="/projects/MyDaily/MyDaily_Tasks-Details.webp"
                     className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
                     alt="Tasks Details"
                   />
                 </div>
 
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img
-                    src="/projects/MyDaily/MyDaily_Tasks-AI.png"
+                  <img loading="lazy" decoding="async"
+                    src="/projects/MyDaily/MyDaily_Tasks-AI.webp"
                     className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
                     alt="Tasks AI"
                   />
@@ -359,24 +359,24 @@ const CaseStudy = () => {
           {isMyDaily && (
             <div className="space-y-8 md:space-y-12">
               <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center">
-                <img
-                  src="/projects/MyDaily/MyDaily_Activity-Unnamed.png"
+                <img loading="lazy" decoding="async"
+                  src="/projects/MyDaily/MyDaily_Activity-Unnamed.webp"
                   className="w-full h-auto max-w-5xl shadow-xl rounded-xl md:rounded-2xl"
                   alt="Activity"
                 />
               </div>
               <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img
-                    src="/projects/MyDaily/MyDaily_Activity-Today.png"
+                  <img loading="lazy" decoding="async"
+                    src="/projects/MyDaily/MyDaily_Activity-Today.webp"
                     className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
                     alt="Today"
                   />
                 </div>
 
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img
-                    src="/projects/MyDaily/MyDaily_Activity-History.png"
+                  <img loading="lazy" decoding="async"
+                    src="/projects/MyDaily/MyDaily_Activity-History.webp"
                     className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
                     alt="History"
                   />
@@ -389,15 +389,15 @@ const CaseStudy = () => {
             {isLawyerLP && (
               <>
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center animate-fade-up">
-                  <img
-                    src="/projects/LawyerLP/LawyerLP_Components.png"
+                  <img loading="lazy" decoding="async"
+                    src="/projects/LawyerLP/LawyerLP_Components.webp"
                     className="w-full h-auto rounded-xl md:rounded-2xl shadow-lg"
                     alt="UI Kit"
                   />
                 </div>
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 px-6 md:px-12 py-0 border border-border/40 flex justify-center overflow-hidden animate-fade-up">
-                  <img
-                    src="/projects/LawyerLP/LawyerLP_Overview.png"
+                  <img loading="lazy" decoding="async"
+                    src="/projects/LawyerLP/LawyerLP_Overview.webp"
                     className="w-full h-auto rounded-none"
                     alt="Lawyer Overview"
                   />
@@ -406,8 +406,8 @@ const CaseStudy = () => {
             )}
             {isKafka && (
               <div className="rounded-xl md:rounded-2xl bg-secondary/50 px-6 md:px-12 py-0 border border-border/40 flex justify-center overflow-hidden animate-fade-up">
-                <img
-                  src="/projects/Kafka/Kafka_Overview.png"
+                <img loading="lazy" decoding="async"
+                  src="/projects/Kafka/Kafka_Overview.webp"
                   className="w-full h-auto rounded-none"
                   alt="Overview"
                 />
@@ -416,15 +416,15 @@ const CaseStudy = () => {
             {isPureHair && (
               <>
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center animate-fade-up">
-                  <img
-                    src="/projects/PureHair/PureHair_CTA-Section.png"
+                  <img loading="lazy" decoding="async"
+                    src="/projects/PureHair/PureHair_CTA-Section.webp"
                     className="w-full h-auto max-w-4xl shadow-lg rounded-xl md:rounded-2xl"
                     alt="CTA Section"
                   />
                 </div>
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 px-0 pt-0 pb-6 md:pb-12 border border-border/40 flex justify-center overflow-hidden animate-fade-up">
-                  <img
-                    src="/projects/PureHair/PureHair_Mobile-Overview.png"
+                  <img loading="lazy" decoding="async"
+                    src="/projects/PureHair/PureHair_Mobile-Overview.webp"
                     className="w-full h-auto rounded-none"
                     alt="Mobile Overview"
                   />
