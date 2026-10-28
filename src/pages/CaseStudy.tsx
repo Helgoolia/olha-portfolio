@@ -163,7 +163,7 @@ const CaseStudy = () => {
               <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center">
                 <img loading="lazy" decoding="async"
                   src="/projects/LawyerLP/LawyerLP_Our-Services.webp"
-                  className="w-full h-auto max-w-4xl shadow-lg rounded-xl md:rounded-2xl"
+                  className="w-full h-auto max-w-4xl rounded-xl md:rounded-2xl"
                   alt="Services"
                 />
               </div>
@@ -178,14 +178,14 @@ const CaseStudy = () => {
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
                   <img loading="lazy" decoding="async"
                     src="/projects/LawyerLP/LawyerLP_Hero-Nav-Mobile.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
+                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
                     alt="Mobile Hero"
                   />
                 </div>
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
                   <img loading="lazy" decoding="async"
                     src="/projects/LawyerLP/LawyerLP_Experts-Mobile.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
+                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
                     alt="Mobile Experts"
                   />
                 </div>
@@ -198,7 +198,7 @@ const CaseStudy = () => {
               <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center">
                 <img loading="lazy" decoding="async"
                   src="/projects/Kafka/Kafka_Illustration-Detail.webp"
-                  className="w-full h-auto max-w-5xl shadow-xl rounded-xl md:rounded-2xl"
+                  className="w-full h-auto max-w-5xl rounded-xl md:rounded-2xl"
                   alt="Detail"
                 />
               </div>
@@ -206,14 +206,14 @@ const CaseStudy = () => {
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
                   <img loading="lazy" decoding="async"
                     src="/projects/Kafka/Kafka_Hero-Mobile.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
+                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
                     alt="Mobile Hero"
                   />
                 </div>
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
                   <img loading="lazy" decoding="async"
                     src="/projects/Kafka/Kafka_Story-Mobile.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
+                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
                     alt="Mobile Story"
                   />
                 </div>
@@ -226,7 +226,7 @@ const CaseStudy = () => {
               <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center">
                 <img loading="lazy" decoding="async"
                   src="/projects/PureHair/PureHair_Services.webp"
-                  className="w-full h-auto max-w-4xl shadow-lg rounded-xl md:rounded-2xl"
+                  className="w-full h-auto max-w-4xl rounded-xl md:rounded-2xl"
                   alt="Services"
                 />
               </div>
@@ -234,14 +234,14 @@ const CaseStudy = () => {
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
                   <img loading="lazy" decoding="async"
                     src="/projects/PureHair/PureHair_Services-Mobile.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
+                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
                     alt="Mobile Services"
                   />
                 </div>
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
                   <img loading="lazy" decoding="async"
                     src="/projects/PureHair/PureHair_How-It-Works-Mobile.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
+                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
                     alt="Mobile How It Works"
                   />
                 </div>
@@ -255,14 +255,14 @@ const CaseStudy = () => {
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
                   <img loading="lazy" decoding="async"
                     src="/projects/book-and-bite/Book&Bite_Home.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
+                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
                     alt="Home"
                   />
                 </div>
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
                   <img loading="lazy" decoding="async"
                     src="/projects/book-and-bite/Book&Bite_Restaurant-Page.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
+                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
                     alt="Restaurant"
                   />
                 </div>
@@ -278,14 +278,14 @@ const CaseStudy = () => {
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
                   <img loading="lazy" decoding="async"
                     src="/projects/book-and-bite/Book&Bite_Layout-Selection.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
+                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
                     alt="Layout Selection"
                   />
                 </div>
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
                   <img loading="lazy" decoding="async"
                     src="/projects/book-and-bite/Book&Bite_Confirmation.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
+                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
                     alt="Confirmation"
                   />
                 </div>
@@ -298,7 +298,7 @@ const CaseStudy = () => {
               <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center">
                 <img loading="lazy" decoding="async"
                   src="/projects/MyDaily/MyDaily_Profile.webp"
-                  className="w-full h-auto max-w-5xl shadow-xl rounded-xl md:rounded-2xl"
+                  className="w-full h-auto max-w-5xl rounded-xl md:rounded-2xl"
                   alt="Profile"
                 />
               </div>
@@ -306,7 +306,7 @@ const CaseStudy = () => {
               <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center">
                 <img loading="lazy" decoding="async"
                   src="/projects/MyDaily/MyDaily_Tasks-Filled.webp"
-                  className="w-full h-auto max-w-5xl shadow-xl rounded-xl md:rounded-2xl"
+                  className="w-full h-auto max-w-5xl rounded-xl md:rounded-2xl"
                   alt="Tasks Filled"
                 />
               </div>
@@ -316,7 +316,7 @@ const CaseStudy = () => {
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
                   <img loading="lazy" decoding="async"
                     src="/projects/MyDaily/MyDaily_Tasks-Details.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
+                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
                     alt="Tasks Details"
                   />
                 </div>
@@ -324,7 +324,7 @@ const CaseStudy = () => {
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
                   <img loading="lazy" decoding="async"
                     src="/projects/MyDaily/MyDaily_Tasks-AI.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
+                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
                     alt="Tasks AI"
                   />
                 </div>
@@ -361,7 +361,7 @@ const CaseStudy = () => {
               <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center">
                 <img loading="lazy" decoding="async"
                   src="/projects/MyDaily/MyDaily_Activity-Unnamed.webp"
-                  className="w-full h-auto max-w-5xl shadow-xl rounded-xl md:rounded-2xl"
+                  className="w-full h-auto max-w-5xl rounded-xl md:rounded-2xl"
                   alt="Activity"
                 />
               </div>
@@ -369,7 +369,7 @@ const CaseStudy = () => {
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
                   <img loading="lazy" decoding="async"
                     src="/projects/MyDaily/MyDaily_Activity-Today.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
+                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
                     alt="Today"
                   />
                 </div>
@@ -377,7 +377,7 @@ const CaseStudy = () => {
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
                   <img loading="lazy" decoding="async"
                     src="/projects/MyDaily/MyDaily_Activity-History.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px] drop-shadow-2xl"
+                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
                     alt="History"
                   />
                 </div>
@@ -391,7 +391,7 @@ const CaseStudy = () => {
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center animate-fade-up">
                   <img loading="lazy" decoding="async"
                     src="/projects/LawyerLP/LawyerLP_Components.webp"
-                    className="w-full h-auto rounded-xl md:rounded-2xl shadow-lg"
+                    className="w-full h-auto rounded-xl md:rounded-2xl"
                     alt="UI Kit"
                   />
                 </div>
@@ -418,7 +418,7 @@ const CaseStudy = () => {
                 <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center animate-fade-up">
                   <img loading="lazy" decoding="async"
                     src="/projects/PureHair/PureHair_CTA-Section.webp"
-                    className="w-full h-auto max-w-4xl shadow-lg rounded-xl md:rounded-2xl"
+                    className="w-full h-auto max-w-4xl rounded-xl md:rounded-2xl"
                     alt="CTA Section"
                   />
                 </div>
