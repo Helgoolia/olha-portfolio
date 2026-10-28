@@ -3,18 +3,18 @@ import { useInView } from "@/hooks/useInView";
 import { ArrowLeft, ArrowRight, X } from "lucide-react";
 
 const monsters = [
-  "/monsters/monster-1.png",
-  "/monsters/monster-2.png",
-  "/monsters/monster-3.png",
-  "/monsters/monster-4.png",
-  "/monsters/monster-5.png",
-  "/monsters/monster-6.png",
-  "/monsters/monster-7.png",
-  "/monsters/monster-8.png",
-  "/monsters/monster-9.png",
-  "/monsters/monster-10.png",
-  "/monsters/monster-11.png",
-  "/monsters/monster-12.png",
+  "/monsters/monster-1.webp",
+  "/monsters/monster-2.webp",
+  "/monsters/monster-3.webp",
+  "/monsters/monster-4.webp",
+  "/monsters/monster-5.webp",
+  "/monsters/monster-6.webp",
+  "/monsters/monster-7.webp",
+  "/monsters/monster-8.webp",
+  "/monsters/monster-9.webp",
+  "/monsters/monster-10.webp",
+  "/monsters/monster-11.webp",
+  "/monsters/monster-12.webp",
 ];
 
 const CreativeExperiments = () => {
@@ -88,7 +88,7 @@ const CreativeExperiments = () => {
               `}
               style={{ animationDelay: `${index * 50}ms` }}
             >
-              <img
+              <img loading="lazy" decoding="async"
                 src={src}
                 alt={`Creative Illustration ${index + 1}`}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"

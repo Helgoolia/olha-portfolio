@@ -30,7 +30,7 @@ const AboutSection = () => {
           {/* Photo */}
           <div className="flex justify-center md:justify-start">
             <img
-              src="/avatar.png" /* Зміни на .png, якщо твоє фото у форматі PNG */
+              src="/avatar.webp" 
               alt="Olha - UX/UI Designer"
               className="w-56 h-56 rounded-full object-cover border border-border/40 shadow-xl"
             />
