@@ -38,7 +38,7 @@ const CaseStudy = () => {
       <Navbar />
       <main className="pt-16">
         {/* Кнопка "Назад" */}
-        <div className="max-w-6xl mx-auto px-6 py-6 md:py-8">
+        <div className="max-w-7xl mx-auto px-6 py-6 md:py-8">
           <button
             onClick={() => navigate("/")}
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors font-body"
@@ -48,7 +48,7 @@ const CaseStudy = () => {
         </div>
 
         {/* Заголовок та Теги */}
-        <div className="max-w-6xl mx-auto px-6 mb-10 md:mb-12">
+        <div className="max-w-7xl mx-auto px-6 mb-10 md:mb-12">
           <h1 className="text-3xl md:text-5xl font-heading font-bold mb-6">
             {project.title}
           </h1>
@@ -67,7 +67,7 @@ const CaseStudy = () => {
         {/* HERO: Behance cover, same as the home card */}
         <div
           ref={heroRef}
-          className={`max-w-6xl mx-auto px-6 mb-16 md:mb-24 ${heroInView ? "animate-fade-up" : "opacity-0"}`}
+          className={`max-w-7xl mx-auto px-6 mb-16 md:mb-24 ${heroInView ? "animate-fade-up" : "opacity-0"}`}
         >
           <img
             src={project.cover}
@@ -79,7 +79,7 @@ const CaseStudy = () => {
         {/* Секція Проблема / Рішення */}
         <div
           ref={contentRef}
-          className={`max-w-6xl mx-auto px-6 mb-16 md:mb-20 ${contentInView ? "animate-fade-up" : "opacity-0"}`}
+          className={`max-w-7xl mx-auto px-6 mb-16 md:mb-20 ${contentInView ? "animate-fade-up" : "opacity-0"}`}
         >
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-8">
@@ -127,7 +127,7 @@ const CaseStudy = () => {
         {/* Legacy first image (cases not yet moved to the new gallery) */}
         {!project.gallery && (
         <div
-          className="max-w-6xl mx-auto px-6 mb-8 md:mb-12"
+          className="max-w-7xl mx-auto px-6 mb-8 md:mb-12"
         >
           <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-0 flex justify-center border border-border/40 overflow-hidden">
             {isBookAndBite && (
@@ -165,7 +165,7 @@ const CaseStudy = () => {
         {/* ДИНАМІЧНА ГАЛЕРЕЯ */}
         <div
           ref={galleryRef}
-          className={`max-w-6xl mx-auto px-6 mb-20 space-y-8 md:space-y-12 ${galleryInView ? "animate-fade-up" : "opacity-0"}`}
+          className={`max-w-7xl mx-auto px-6 mb-20 space-y-8 md:space-y-12 ${galleryInView ? "animate-fade-up" : "opacity-0"}`}
         >
           {isLawyerLP && (
             <>
@@ -306,7 +306,7 @@ const CaseStudy = () => {
         {/* СЕКЦІЯ РІШЕНЬ + ФІНАЛЬНІ ОГЛЯДИ */}
         <div
           ref={decisionsRef}
-          className={`max-w-6xl mx-auto px-6 mb-20 ${decisionsInView ? "animate-fade-up" : "opacity-0"}`}
+          className={`max-w-7xl mx-auto px-6 mb-20 ${decisionsInView ? "animate-fade-up" : "opacity-0"}`}
         >
           <h2 className="text-2xl md:text-3xl font-heading font-bold mb-8">
             Key Design Decisions
@@ -377,7 +377,7 @@ const CaseStudy = () => {
         </div>
 
         {/* НАВІГАЦІЯ ВНИЗУ */}
-        <div className="max-w-6xl mx-auto px-6 pb-20 border-t border-border pt-10 flex justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-6 pb-20 border-t border-border pt-10 flex justify-between gap-4">
           {prevProject ? (
             <button
               onClick={() => navigate(`/project/${prevProject.id}`)}
