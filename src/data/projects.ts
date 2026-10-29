@@ -9,7 +9,21 @@ export interface Project {
   tools: string[];
   solution: string;
   decisions: string[];
+  /** Behance-style cover, 1920×1500. Used on the home card and as the case hero. */
+  cover: string;
+  /** Optional user flow / structure diagram, shown before the gallery. */
+  flow?: string;
+  /** New gallery: each group is one row. 2+ images = phones in one row; 1 image = its own card (consecutive singles sit side by side). */
+  gallery?: GalleryGroup[];
 }
+
+export interface GalleryGroup {
+  caption?: string;
+  images: string[];
+}
+
+const md = (n: string) => `/projects/MyDaily/${n}.webp`;
+
 
 export const projects: Project[] = [
   {
@@ -31,6 +45,21 @@ export const projects: Project[] = [
       "Minimal dark interface with subtle accent colors to support long-term usability and focus",
       "Separated Today and History views to simplify daily task management and improve clarity of past activity records",
     ],
+    cover: "/projects/MyDaily/cover.webp",
+    flow: md("00-flow"),
+    gallery: [
+      { caption: "Profile & visit card", images: [md("01-1-phone"), md("01-2-phone"), md("01-3-phone")] },
+      { caption: "Tasks & AI subtasks", images: [md("02-1-phone"), md("02-2-phone"), md("02-3-phone")] },
+      { caption: "To-Do list", images: [md("03-phone")] },
+      { caption: "Task actions", images: [md("04-phone")] },
+      { caption: "Completed tasks", images: [md("05-1-phone"), md("05-2-phone"), md("05-3-phone")] },
+      { caption: "Time log", images: [md("06-phone")] },
+      { caption: "Empty time log", images: [md("07-phone")] },
+      { caption: "Activity: today", images: [md("08-1-phone"), md("08-2-phone"), md("08-3-phone")] },
+      { caption: "Unassigned time", images: [md("09-phone")] },
+      { caption: "Assign to a task", images: [md("10-phone")] },
+      { caption: "History & time reassign", images: [md("11-1-phone"), md("11-2-phone"), md("11-3-phone")] },
+    ],
   },
   {
     id: "book-and-bite",
@@ -51,6 +80,7 @@ export const projects: Project[] = [
       "Visual seat selection feature — users can choose specific tables and halls on an interactive layout map",
       "Micro-interactions and animated transitions designed in Figma prototype to guide users through the flow",
     ],
+    cover: "/projects/book-and-bite/cover.webp",
   },
   {
     id: "lawyer-company",
@@ -71,6 +101,7 @@ export const projects: Project[] = [
       "Services section uses icon + title + short paragraph — scannable and professional",
       "Fully adaptive — desktop and mobile layouts both designed and shown",
     ],
+    cover: "/projects/LawyerLP/cover.webp",
   },
   {
     id: "metamorphosis",
@@ -91,6 +122,7 @@ export const projects: Project[] = [
       "Information hierarchy that balances emotion (illustration) with function (contest rules, dates, CTA)",
       "Adaptive layout — full desktop and mobile views designed",
     ],
+    cover: "/projects/Kafka/cover.webp",
   },
   {
     id: "pure-hair-salon",
@@ -111,5 +143,6 @@ export const projects: Project[] = [
       "Services presented as a clean card grid with icons — scannable and clear",
       "Adaptive layout — both desktop and mobile tested and presented",
     ],
+    cover: "/projects/PureHair/cover.webp",
   },
 ];

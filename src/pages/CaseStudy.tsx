@@ -4,6 +4,7 @@ import { useInView } from "@/hooks/useInView";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CaseGallery from "@/components/CaseGallery";
 import { useEffect } from "react";
 
 const CaseStudy = () => {
@@ -27,7 +28,6 @@ const CaseStudy = () => {
 
   if (!project) return null;
 
-  const isMyDaily = id === "MyDaily";
   const isBookAndBite = id === "book-and-bite";
   const isLawyerLP = id === "lawyer-company";
   const isKafka = id === "metamorphosis";
@@ -47,52 +47,8 @@ const CaseStudy = () => {
           </button>
         </div>
 
-        {/* 1. HERO (Без падінгів, картинки впритик до рамок) */}
-        <div
-          ref={heroRef}
-          className={`max-w-6xl mx-auto px-6 mb-16 md:mb-24 ${heroInView ? "animate-fade-up" : "opacity-0"}`}
-        >
-          <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-0 flex justify-center border border-border/40 overflow-hidden">
-            {isBookAndBite && (
-              <img
-                src="/projects/book-and-bite/Book&Bite_User Flow.webp"
-                alt="Hero"
-                className="w-full h-auto rounded-xl md:rounded-2xl"
-              />
-            )}
-            {isLawyerLP && (
-              <img
-                src="/projects/LawyerLP/LawyerLP_Hero-Nav.webp"
-                alt="Hero"
-                className="w-full h-auto rounded-xl md:rounded-2xl"
-              />
-            )}
-            {isKafka && (
-              <img
-                src="/projects/Kafka/Kafka_Hero.webp"
-                alt="Hero"
-                className="w-full h-auto rounded-xl md:rounded-2xl"
-              />
-            )}
-            {isPureHair && (
-              <img
-                src="/projects/PureHair/PureHair_Hero.webp"
-                alt="Hero"
-                className="w-full h-auto rounded-xl md:rounded-2xl"
-              />
-            )}
-            {isMyDaily && (
-              <img
-                src="/projects/MyDaily/MyDaily_Flow.webp"
-                alt="Hero"
-                className="w-full h-auto rounded-xl md:rounded-2xl"
-              />
-            )}
-          </div>
-        </div>
-
         {/* Заголовок та Теги */}
-        <div className="max-w-6xl mx-auto px-6 mb-12 md:mb-16">
+        <div className="max-w-6xl mx-auto px-6 mb-10 md:mb-12">
           <h1 className="text-3xl md:text-5xl font-heading font-bold mb-6">
             {project.title}
           </h1>
@@ -106,6 +62,18 @@ const CaseStudy = () => {
               </span>
             ))}
           </div>
+        </div>
+
+        {/* HERO: Behance cover, same as the home card */}
+        <div
+          ref={heroRef}
+          className={`max-w-6xl mx-auto px-6 mb-16 md:mb-24 ${heroInView ? "animate-fade-up" : "opacity-0"}`}
+        >
+          <img
+            src={project.cover}
+            alt={`${project.title} cover`}
+            className="w-full h-auto aspect-[1920/1500] object-cover rounded-xl md:rounded-2xl border border-border/40"
+          />
         </div>
 
         {/* Секція Проблема / Рішення */}
@@ -152,6 +120,47 @@ const CaseStudy = () => {
             </div>
           </div>
         </div>
+
+        {/* NEW GALLERY: flow + rows of screens */}
+        {project.gallery && <CaseGallery flow={project.flow} groups={project.gallery} title={project.title} />}
+
+        {/* Legacy first image (cases not yet moved to the new gallery) */}
+        {!project.gallery && (
+        <div
+          className="max-w-6xl mx-auto px-6 mb-8 md:mb-12"
+        >
+          <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-0 flex justify-center border border-border/40 overflow-hidden">
+            {isBookAndBite && (
+              <img
+                src="/projects/book-and-bite/Book&Bite_User Flow.webp"
+                alt="Hero"
+                className="w-full h-auto rounded-xl md:rounded-2xl"
+              />
+            )}
+            {isLawyerLP && (
+              <img
+                src="/projects/LawyerLP/LawyerLP_Hero-Nav.webp"
+                alt="Hero"
+                className="w-full h-auto rounded-xl md:rounded-2xl"
+              />
+            )}
+            {isKafka && (
+              <img
+                src="/projects/Kafka/Kafka_Hero.webp"
+                alt="Hero"
+                className="w-full h-auto rounded-xl md:rounded-2xl"
+              />
+            )}
+            {isPureHair && (
+              <img
+                src="/projects/PureHair/PureHair_Hero.webp"
+                alt="Hero"
+                className="w-full h-auto rounded-xl md:rounded-2xl"
+              />
+            )}
+          </div>
+        </div>
+        )}
 
         {/* ДИНАМІЧНА ГАЛЕРЕЯ */}
         <div
@@ -292,45 +301,6 @@ const CaseStudy = () => {
               </div>
             </div>
           )}
-          {isMyDaily && (
-            <>
-              {/* Large images */}
-              <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center">
-                <img loading="lazy" decoding="async"
-                  src="/projects/MyDaily/MyDaily_Profile.webp"
-                  className="w-full h-auto max-w-5xl rounded-xl md:rounded-2xl"
-                  alt="Profile"
-                />
-              </div>
-
-              <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center">
-                <img loading="lazy" decoding="async"
-                  src="/projects/MyDaily/MyDaily_Tasks-Filled.webp"
-                  className="w-full h-auto max-w-5xl rounded-xl md:rounded-2xl"
-                  alt="Tasks Filled"
-                />
-              </div>
-
-              {/* Two mobile screens */}
-              <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-                <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img loading="lazy" decoding="async"
-                    src="/projects/MyDaily/MyDaily_Tasks-Details.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
-                    alt="Tasks Details"
-                  />
-                </div>
-
-                <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img loading="lazy" decoding="async"
-                    src="/projects/MyDaily/MyDaily_Tasks-AI.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
-                    alt="Tasks AI"
-                  />
-                </div>
-              </div>
-            </>
-          )}
         </div>
 
         {/* СЕКЦІЯ РІШЕНЬ + ФІНАЛЬНІ ОГЛЯДИ */}
@@ -356,34 +326,6 @@ const CaseStudy = () => {
               </div>
             ))}
           </div>
-          {isMyDaily && (
-            <div className="space-y-8 md:space-y-12">
-              <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center">
-                <img loading="lazy" decoding="async"
-                  src="/projects/MyDaily/MyDaily_Activity-Unnamed.webp"
-                  className="w-full h-auto max-w-5xl rounded-xl md:rounded-2xl"
-                  alt="Activity"
-                />
-              </div>
-              <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-                <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img loading="lazy" decoding="async"
-                    src="/projects/MyDaily/MyDaily_Activity-Today.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
-                    alt="Today"
-                  />
-                </div>
-
-                <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img loading="lazy" decoding="async"
-                    src="/projects/MyDaily/MyDaily_Activity-History.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
-                    alt="History"
-                  />
-                </div>
-              </div>
-            </div>
-          )}
 
           <div className="space-y-8 md:space-y-12">
             {isLawyerLP && (
