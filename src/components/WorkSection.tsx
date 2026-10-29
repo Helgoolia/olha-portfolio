@@ -12,15 +12,7 @@ const ProjectCard = ({
   const navigate = useNavigate();
   const [ref, inView] = useInView(0.1);
 
-  const coverImages: Record<string, string> = {
-    MyDaily: "/projects/MyDaily/MyDaily_Cover.webp",
-    "book-and-bite": "/projects/book-and-bite/Book&Bite_Case-Cover.webp",
-    "lawyer-company": "/projects/LawyerLP/LawyerLP_Cover.webp",
-    metamorphosis: "/projects/Kafka/Kafka_Cover.webp",
-    "pure-hair-salon": "/projects/PureHair/PureHair_Cover.webp",
-  };
-
-  const coverImage = coverImages[project.id];
+  const coverImage = project.cover;
 
   return (
     <div
@@ -33,11 +25,13 @@ const ProjectCard = ({
         onClick={() => navigate(`/project/${project.id}`)}
       >
         {coverImage ? (
-          <div className="aspect-video bg-[#1A1A1A] flex items-end justify-center overflow-hidden p-0">
+          <div className="aspect-[1920/1500] bg-[#1A1A1A] overflow-hidden">
             <img
               src={coverImage}
               alt={`${project.title} cover`}
-              className="w-full h-full object-contain object-bottom transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         ) : (
