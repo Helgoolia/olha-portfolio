@@ -377,7 +377,7 @@ const CaseStudy = () => {
         </div>
 
         {/* НАВІГАЦІЯ ВНИЗУ */}
-        <div className="max-w-7xl mx-auto px-6 pb-20 border-t border-border pt-10 flex justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-6 pb-20 pt-4 flex justify-between gap-4">
           {prevProject ? (
             <button
               onClick={() => navigate(`/project/${prevProject.id}`)}
