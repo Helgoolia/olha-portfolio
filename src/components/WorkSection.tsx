@@ -76,7 +76,7 @@ const WorkSection = () => {
   return (
     /* py-16 для мобілки, py-32 для десктопу */
     <section id="work" className="py-16 md:py-32 px-6">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div
           ref={ref}
           /* mb-10 для мобілки, mb-16 для десктопу */

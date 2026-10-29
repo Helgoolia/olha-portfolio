@@ -28,7 +28,7 @@ const Navbar = () => {
       }`}
     >
       <div className="bg-background/70 backdrop-blur-xl border-b border-border/50">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Кнопка з ЛОГОТИПОМ */}
           <button
             onClick={() => {

@@ -60,7 +60,7 @@ const CreativeExperiments = () => {
       className="py-16 md:py-32 px-6"
       style={{ backgroundColor: "#0D0D12" }}
     >
-      <div className="max-w-6xl mx-auto" ref={ref}>
+      <div className="max-w-7xl mx-auto" ref={ref}>
         <div
           className={`mb-10 md:mb-16 max-w-3xl ${inView ? "animate-fade-up" : "opacity-0"}`}
         >
