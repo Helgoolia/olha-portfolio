@@ -34,9 +34,9 @@ const PhoneRow = ({ group, title }: { group: GalleryGroup; title: string }) => (
   <div>
     <Caption text={group.caption} />
     <div className={`${cardClass} py-6 md:p-12`}>
-      <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-10 overflow-x-auto md:overflow-visible px-6 md:px-0 snap-x snap-mandatory scrollbar-hide">
+      <div className="flex md:justify-center gap-4 md:gap-12 lg:gap-16 overflow-x-auto md:overflow-visible px-6 md:px-0 snap-x snap-mandatory scrollbar-hide">
         {group.images.map((src, i) => (
-          <div key={src} className="flex-shrink-0 w-[62vw] sm:w-[40vw] md:w-auto snap-center">
+          <div key={src} className="flex-shrink-0 w-[62vw] sm:w-[40vw] md:w-[30%] md:max-w-[300px] snap-center">
             <Phone src={src} alt={`${title} — ${group.caption ?? "screen"} ${i + 1}`} />
           </div>
         ))}
@@ -50,7 +50,7 @@ const SingleCard = ({ group, title }: { group: GalleryGroup; title: string }) =>
   <div className="flex flex-col">
     <Caption text={group.caption} />
     <div className={`${cardClass} p-6 md:p-12 flex-grow flex items-center justify-center`}>
-      <div className="w-[62vw] sm:w-[40vw] md:w-full md:max-w-[360px]">
+      <div className="w-[62vw] sm:w-[40vw] md:w-full md:max-w-[300px]">
         <Phone src={group.images[0]} alt={`${title} — ${group.caption ?? "screen"}`} />
       </div>
     </div>
