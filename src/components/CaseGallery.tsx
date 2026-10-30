@@ -9,6 +9,13 @@ import { useInView } from "@/hooks/useInView";
  */
 const PHONE_RADIUS = "14% / 6.46%";
 
+/**
+ * Collapsed full page fade: long and eased (no hard start line), so a light
+ * page melts into the dark card instead of turning into a grey band.
+ */
+const FADE =
+  "linear-gradient(to bottom, #000 0%, #000 64%, rgba(0,0,0,.9) 70%, rgba(0,0,0,.72) 76%, rgba(0,0,0,.5) 82%, rgba(0,0,0,.3) 88%, rgba(0,0,0,.13) 94%, transparent 100%)";
+
 /** Desktop pages and sections: same soft corner as the responsive lineup panels. */
 const PAGE_RADIUS = "rounded-md md:rounded-[10px]";
 
@@ -91,8 +98,8 @@ const PageCard = ({ group, title }: { group: GalleryGroup; title: string }) => {
       <Caption text={group.caption} />
       <div className={`${cardClass} p-6 md:p-12`}>
         <div
-          className={`relative overflow-hidden ${open ? "" : "max-h-[520px] md:max-h-[1100px]"}`}
-          style={open ? undefined : { maskImage: "linear-gradient(to bottom, black 75%, transparent)", WebkitMaskImage: "linear-gradient(to bottom, black 75%, transparent)" }}
+          className={`relative overflow-hidden ${open ? "" : "max-h-[560px] md:max-h-[1200px]"}`}
+          style={open ? undefined : { maskImage: FADE, WebkitMaskImage: FADE }}
         >
           <Img src={group.images[0]} alt={`${title} — ${group.caption ?? "full page"}`} className={PAGE_RADIUS} />
         </div>
