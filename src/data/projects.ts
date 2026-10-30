@@ -31,6 +31,8 @@ export interface GalleryGroup {
   preview?: string[];
   /** Natural widths of `images`, used by `states` to keep one scale. */
   w?: number[];
+  /** `states` only: round the corners (for section-sized states, not popups with their own shape). */
+  rounded?: boolean;
 }
 
 const md = (n: string) => `/projects/MyDaily/${n}.webp`;
@@ -164,7 +166,7 @@ export const projects: Project[] = [
       { caption: "Full page", kind: "page", images: [kf("00-page")], preview: [kf("00-page-preview-top"), kf("00-page-preview-fade")] },
       { caption: "How to participate: rules & submission form", kind: "wide", images: [kf("01-section")] },
       { caption: "Story highlights carousel", kind: "wide", images: [kf("02-section")] },
-      { caption: "Past winners: pick a name to see the work", kind: "states", images: [kf("03-1-state"), kf("03-2-state")], w: [2160, 2160] },
+      { caption: "Past winners: pick a name to see the work", kind: "states", images: [kf("03-1-state"), kf("03-2-state")], w: [2160, 2160], rounded: true },
       { caption: "FAQ accordion", kind: "wide", images: [kf("04-section")] },
       { caption: "Mobile: hero, menu, submission", images: [kf("05-1-phone"), kf("05-2-phone"), kf("05-3-phone")] },
     ],

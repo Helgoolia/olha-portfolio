@@ -141,7 +141,7 @@ const StatesRow = ({ group, title }: { group: GalleryGroup; title: string }) => 
       <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8">
         {group.images.map((src, i) => (
           <div key={src} className="min-w-0 md:basis-0" style={{ flexGrow: group.w?.[i] ?? 1 }}>
-            <Img src={src} alt={`${title} — ${group.caption ?? "state"} ${i + 1}`} />
+            <Img src={src} alt={`${title} — ${group.caption ?? "state"} ${i + 1}`} className={group.rounded ? PAGE_RADIUS : ""} />
           </div>
         ))}
       </div>
