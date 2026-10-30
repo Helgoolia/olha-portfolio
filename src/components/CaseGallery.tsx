@@ -9,6 +9,9 @@ import { useInView } from "@/hooks/useInView";
  */
 const PHONE_RADIUS = "14% / 6.46%";
 
+/** Desktop pages and sections: same soft corner as the responsive lineup panels. */
+const PAGE_RADIUS = "rounded-md md:rounded-[10px]";
+
 const Phone = ({ src, alt }: { src: string; alt: string }) => (
   <img
     src={src}
@@ -73,7 +76,7 @@ const PageCard = ({ group, title }: { group: GalleryGroup; title: string }) => {
           className={`relative overflow-hidden ${open ? "" : "max-h-[520px] md:max-h-[1100px]"}`}
           style={open ? undefined : { maskImage: "linear-gradient(to bottom, black 75%, transparent)", WebkitMaskImage: "linear-gradient(to bottom, black 75%, transparent)" }}
         >
-          <Img src={group.images[0]} alt={`${title} — ${group.caption ?? "full page"}`} />
+          <Img src={group.images[0]} alt={`${title} — ${group.caption ?? "full page"}`} className={PAGE_RADIUS} />
         </div>
         <div className="flex justify-center mt-6">
           <button
@@ -94,7 +97,7 @@ const WideCard = ({ group, title }: { group: GalleryGroup; title: string }) => (
   <div>
     <Caption text={group.caption} />
     <div className={`${cardClass} p-6 md:p-12`}>
-      <Img src={group.images[0]} alt={`${title} — ${group.caption ?? "section"}`} />
+      <Img src={group.images[0]} alt={`${title} — ${group.caption ?? "section"}`} className={PAGE_RADIUS} />
     </div>
   </div>
 );
