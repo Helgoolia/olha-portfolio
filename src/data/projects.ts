@@ -55,10 +55,10 @@ export const projects: Project[] = [
     tags: ["Mobile", "Gamification", "Commercial"],
     problem:
       "A walking community ran its daily practice across Telegram bots, chats and a separate tracker. Progress was hard to see, the rules (7 km at 5 km/h, monthly 9-day quests) were easy to break by accident, and there was no shared sense of a city growing together.",
-    role: "UX/UI Designer — wireframes, UI, design system",
+    role: "UX/UI Designer — UX, UI, design system",
     tools: ["Figma"],
     solution:
-      "One app built around a daily core loop: start a walk, listen, keep the pace, earn energy, grow. Free walks and monthly quests share the same loop; a subscription adds energy and protects quest progress when a day is missed. Personal energy lights up the city on a shared planet map, so every walk counts for you and for your city.",
+      "One app built around a daily core loop: start a walk, listen, keep the pace, earn energy, grow. Free walks and monthly quests share the same loop; a subscription adds energy and protects quest progress when a day is missed. Personal energy lights up the city on a shared planet map, so every walk counts twice: for the walker and for their city.",
     decisions: [
       "One core loop for free walks and quests — users learn the rules once",
       "Quest day states (at risk, out, saved by subscription) made explicit, with a warning before progress is lost",
