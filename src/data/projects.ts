@@ -23,6 +23,7 @@ export interface GalleryGroup {
 }
 
 const md = (n: string) => `/projects/MyDaily/${n}.webp`;
+const bb = (n: string) => `/projects/book-and-bite/${n}.webp`;
 
 
 export const projects: Project[] = [
@@ -81,6 +82,18 @@ export const projects: Project[] = [
       "Micro-interactions and animated transitions designed in Figma prototype to guide users through the flow",
     ],
     cover: "/projects/book-and-bite/cover.webp",
+    flow: bb("00-flow"),
+    gallery: [
+      { caption: "Home, location & guests", images: [bb("01-1-phone"), bb("01-2-phone"), bb("01-3-phone")] },
+      { caption: "Search", images: [bb("02-phone")] },
+      { caption: "Filters", images: [bb("03-phone")] },
+      { caption: "Restaurant page", images: [bb("04-1-phone"), bb("04-2-phone"), bb("04-3-phone")] },
+      { caption: "Date, time & table on the layout", images: [bb("05-1-phone"), bb("05-2-phone"), bb("05-3-phone")] },
+      { caption: "Confirm & track the booking", images: [bb("06-1-phone"), bb("06-2-phone"), bb("06-3-phone")] },
+      { caption: "Profile photo", images: [bb("07-phone")] },
+      { caption: "Photo access", images: [bb("08-phone")] },
+      { caption: "Settings", images: [bb("09-1-phone"), bb("09-2-phone"), bb("09-3-phone")] },
+    ],
   },
   {
     id: "lawyer-company",
