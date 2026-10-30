@@ -27,6 +27,8 @@ export interface GalleryGroup {
    * states — cards side by side, each sized by its real width (see `w`).
    */
   kind?: "phones" | "page" | "wide" | "states";
+  /** `page` only: collapsed top of the page with the fade baked in. */
+  preview?: string;
   /** Natural widths of `images`, used by `states` to keep one scale. */
   w?: number[];
 }
@@ -168,7 +170,7 @@ export const projects: Project[] = [
     ],
     cover: "/projects/PureHair/cover.webp",
     gallery: [
-      { caption: "Full page", kind: "page", images: [ph("00-page")] },
+      { caption: "Full page", kind: "page", images: [ph("00-page")], preview: ph("00-page-preview") },
       { caption: "Hero CTA → call-back form", kind: "wide", images: [ph("01-section")] },
       { caption: "Form states: error · filled · success", kind: "states", images: [ph("02-1-state"), ph("02-2-state"), ph("02-3-state")], w: [942, 942, 942] },
       { caption: "Leave a review → Thank you", kind: "states", images: [ph("03-1-state"), ph("03-2-state")], w: [1800, 708] },
