@@ -9,13 +9,6 @@ import { useInView } from "@/hooks/useInView";
  */
 const PHONE_RADIUS = "14% / 6.46%";
 
-/**
- * Collapsed full page fade: long and eased (no hard start line), so a light
- * page melts into the dark card instead of turning into a grey band.
- */
-const FADE =
-  "linear-gradient(to bottom, #000 0%, #000 64%, rgba(0,0,0,.9) 70%, rgba(0,0,0,.72) 76%, rgba(0,0,0,.5) 82%, rgba(0,0,0,.3) 88%, rgba(0,0,0,.13) 94%, transparent 100%)";
-
 /** Desktop pages and sections: same soft corner as the responsive lineup panels. */
 const PAGE_RADIUS = "rounded-md md:rounded-[10px]";
 
@@ -97,21 +90,14 @@ const PageCard = ({ group, title }: { group: GalleryGroup; title: string }) => {
     <div>
       <Caption text={group.caption} />
       <div className={`${cardClass} p-6 md:p-12`}>
-        <div
-          className={`relative overflow-hidden ${open ? "" : "max-h-[560px] md:max-h-[1200px]"}`}
-          style={open ? undefined : { maskImage: FADE, WebkitMaskImage: FADE }}
-        >
+        {open || !group.preview ? (
           <Img src={group.images[0]} alt={`${title} — ${group.caption ?? "full page"}`} className={PAGE_RADIUS} />
-          {!open && (
-            /* Fine grain over the fade zone: dithers the gradient so it doesn't band. */
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 opacity-[0.07]"
-              style={{ backgroundImage: "url(/noise.png)", backgroundSize: "128px 128px", maskImage: "linear-gradient(to bottom, transparent, #000 35%)", WebkitMaskImage: "linear-gradient(to bottom, transparent, #000 35%)" }}
-            />
-          )}
-        </div>
-        <div ref={barRef} className={`flex justify-center mt-6 ${open ? "sticky bottom-6 z-10" : ""}`}>
+        ) : (
+          /* Collapsed: a pre-rendered top of the page with the fade baked in and dithered
+             (scripts/make_page_preview.py) — smooth on every screen, no CSS banding. */
+          <Img src={group.preview} alt={`${title} — ${group.caption ?? "full page"}, top`} className={PAGE_RADIUS} />
+        )}
+        <div ref={barRef} className={`flex justify-center ${open ? "mt-6 sticky bottom-6 z-10" : "-mt-4"}`}>
           <button
             type="button"
             onClick={toggle}
