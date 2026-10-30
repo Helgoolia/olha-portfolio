@@ -151,14 +151,16 @@ const StatesRow = ({ group, title }: { group: GalleryGroup; title: string }) => 
 
 type Row =
   | { kind: "row"; group: GalleryGroup }
-  | { kind: "page" | "wide" | "states"; group: GalleryGroup }
+  | { kind: "page"; group: GalleryGroup }
+  | { kind: "wide"; group: GalleryGroup }
+  | { kind: "states"; group: GalleryGroup }
   | { kind: "singles"; groups: GalleryGroup[] };
 
 const toRows = (groups: GalleryGroup[]): Row[] => {
   const rows: Row[] = [];
   for (const g of groups) {
     const last = rows[rows.length - 1];
-    if (g.kind && g.kind !== "phones") rows.push({ kind: g.kind, group: g });
+    if (g.kind === "page" || g.kind === "wide" || g.kind === "states") rows.push({ kind: g.kind, group: g } as Row);
     else if (g.images.length > 1) rows.push({ kind: "row", group: g });
     else if (last?.kind === "singles" && last.groups.length < 2) last.groups.push(g);
     else rows.push({ kind: "singles", groups: [g] });
