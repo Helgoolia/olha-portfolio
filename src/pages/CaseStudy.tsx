@@ -28,7 +28,6 @@ const CaseStudy = () => {
 
   if (!project) return null;
 
-  const isBookAndBite = id === "book-and-bite";
   const isLawyerLP = id === "lawyer-company";
   const isKafka = id === "metamorphosis";
   const isPureHair = id === "pure-hair-salon";
@@ -130,13 +129,6 @@ const CaseStudy = () => {
           className="max-w-7xl mx-auto px-6 mb-8 md:mb-12"
         >
           <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-0 flex justify-center border border-border/40 overflow-hidden">
-            {isBookAndBite && (
-              <img
-                src="/projects/book-and-bite/Book&Bite_User Flow.webp"
-                alt="Hero"
-                className="w-full h-auto rounded-xl md:rounded-2xl"
-              />
-            )}
             {isLawyerLP && (
               <img
                 src="/projects/LawyerLP/LawyerLP_Hero-Nav.webp"
@@ -163,6 +155,7 @@ const CaseStudy = () => {
         )}
 
         {/* ДИНАМІЧНА ГАЛЕРЕЯ */}
+        {!project.gallery && (
         <div
           ref={galleryRef}
           className={`max-w-7xl mx-auto px-6 mb-20 space-y-8 md:space-y-12 ${galleryInView ? "animate-fade-up" : "opacity-0"}`}
@@ -258,50 +251,8 @@ const CaseStudy = () => {
             </>
           )}
 
-          {isBookAndBite && (
-            <div className="space-y-8 md:space-y-12">
-              <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-                <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img loading="lazy" decoding="async"
-                    src="/projects/book-and-bite/Book&Bite_Home.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
-                    alt="Home"
-                  />
-                </div>
-                <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img loading="lazy" decoding="async"
-                    src="/projects/book-and-bite/Book&Bite_Restaurant-Page.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
-                    alt="Restaurant"
-                  />
-                </div>
-              </div>
-              <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                <img loading="lazy" decoding="async"
-                  src="/projects/book-and-bite/Book&Bite_Booking-Flow.webp"
-                  className="w-full h-auto rounded-none"
-                  alt="Booking Flow"
-                />
-              </div>
-              <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-                <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img loading="lazy" decoding="async"
-                    src="/projects/book-and-bite/Book&Bite_Layout-Selection.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
-                    alt="Layout Selection"
-                  />
-                </div>
-                <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img loading="lazy" decoding="async"
-                    src="/projects/book-and-bite/Book&Bite_Confirmation.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
-                    alt="Confirmation"
-                  />
-                </div>
-              </div>
-            </div>
-          )}
         </div>
+        )}
 
         {/* СЕКЦІЯ РІШЕНЬ + ФІНАЛЬНІ ОГЛЯДИ */}
         <div
@@ -377,7 +328,7 @@ const CaseStudy = () => {
         </div>
 
         {/* НАВІГАЦІЯ ВНИЗУ */}
-        <div className="max-w-7xl mx-auto px-6 pb-20 border-t border-border pt-10 flex justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-6 pb-20 pt-4 flex justify-between gap-4">
           {prevProject ? (
             <button
               onClick={() => navigate(`/project/${prevProject.id}`)}
