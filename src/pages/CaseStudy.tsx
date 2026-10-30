@@ -30,7 +30,6 @@ const CaseStudy = () => {
 
   const isLawyerLP = id === "lawyer-company";
   const isKafka = id === "metamorphosis";
-  const isPureHair = id === "pure-hair-salon";
 
   return (
     <>
@@ -143,13 +142,6 @@ const CaseStudy = () => {
                 className="w-full h-auto rounded-xl md:rounded-2xl"
               />
             )}
-            {isPureHair && (
-              <img
-                src="/projects/PureHair/PureHair_Hero.webp"
-                alt="Hero"
-                className="w-full h-auto rounded-xl md:rounded-2xl"
-              />
-            )}
           </div>
         </div>
         )}
@@ -223,33 +215,6 @@ const CaseStudy = () => {
             </>
           )}
 
-          {isPureHair && (
-            <>
-              <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center">
-                <img loading="lazy" decoding="async"
-                  src="/projects/PureHair/PureHair_Services.webp"
-                  className="w-full h-auto max-w-4xl rounded-xl md:rounded-2xl"
-                  alt="Services"
-                />
-              </div>
-              <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-                <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img loading="lazy" decoding="async"
-                    src="/projects/PureHair/PureHair_Services-Mobile.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
-                    alt="Mobile Services"
-                  />
-                </div>
-                <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img loading="lazy" decoding="async"
-                    src="/projects/PureHair/PureHair_How-It-Works-Mobile.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
-                    alt="Mobile How It Works"
-                  />
-                </div>
-              </div>
-            </>
-          )}
 
         </div>
         )}
@@ -278,6 +243,7 @@ const CaseStudy = () => {
             ))}
           </div>
 
+          {!project.gallery && (
           <div className="space-y-8 md:space-y-12">
             {isLawyerLP && (
               <>
@@ -306,25 +272,8 @@ const CaseStudy = () => {
                 />
               </div>
             )}
-            {isPureHair && (
-              <>
-                <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center animate-fade-up">
-                  <img loading="lazy" decoding="async"
-                    src="/projects/PureHair/PureHair_CTA-Section.webp"
-                    className="w-full h-auto max-w-4xl rounded-xl md:rounded-2xl"
-                    alt="CTA Section"
-                  />
-                </div>
-                <div className="rounded-xl md:rounded-2xl bg-secondary/50 px-0 pt-0 pb-6 md:pb-12 border border-border/40 flex justify-center overflow-hidden animate-fade-up">
-                  <img loading="lazy" decoding="async"
-                    src="/projects/PureHair/PureHair_Mobile-Overview.webp"
-                    className="w-full h-auto rounded-none"
-                    alt="Mobile Overview"
-                  />
-                </div>
-              </>
-            )}
           </div>
+          )}
         </div>
 
         {/* НАВІГАЦІЯ ВНИЗУ */}

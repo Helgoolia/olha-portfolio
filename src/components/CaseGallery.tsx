@@ -1,4 +1,5 @@
 import type { GalleryGroup } from "@/data/projects";
+import { useState } from "react";
 import { useInView } from "@/hooks/useInView";
 
 /**
@@ -57,15 +58,74 @@ const SingleCard = ({ group, title }: { group: GalleryGroup; title: string }) =>
   </div>
 );
 
+const Img = ({ src, alt, className = "" }: { src: string; alt: string; className?: string }) => (
+  <img src={src} alt={alt} loading="lazy" decoding="async" className={`block w-full h-auto ${className}`} />
+);
+
+/** One tall page, collapsed to ~1.3 screens with a fade and a toggle. */
+const PageCard = ({ group, title }: { group: GalleryGroup; title: string }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div>
+      <Caption text={group.caption} />
+      <div className={`${cardClass} p-6 md:p-12`}>
+        <div
+          className={`relative overflow-hidden ${open ? "" : "max-h-[520px] md:max-h-[1100px]"}`}
+          style={open ? undefined : { maskImage: "linear-gradient(to bottom, black 75%, transparent)", WebkitMaskImage: "linear-gradient(to bottom, black 75%, transparent)" }}
+        >
+          <Img src={group.images[0]} alt={`${title} — ${group.caption ?? "full page"}`} />
+        </div>
+        <div className="flex justify-center mt-6">
+          <button
+            type="button"
+            onClick={() => setOpen(!open)}
+            className="px-5 py-2.5 rounded-full border border-border text-sm font-body text-foreground hover:bg-secondary transition-colors"
+          >
+            {open ? "Collapse" : "Show full page"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/** One wide image (a section, an inner page, a responsive lineup). */
+const WideCard = ({ group, title }: { group: GalleryGroup; title: string }) => (
+  <div>
+    <Caption text={group.caption} />
+    <div className={`${cardClass} p-6 md:p-12`}>
+      <Img src={group.images[0]} alt={`${title} — ${group.caption ?? "section"}`} />
+    </div>
+  </div>
+);
+
+/** UI states side by side, each as wide as it really is, so they share one scale. */
+const StatesRow = ({ group, title }: { group: GalleryGroup; title: string }) => (
+  <div>
+    <Caption text={group.caption} />
+    <div className={`${cardClass} p-6 md:p-12`}>
+      <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8">
+        {group.images.map((src, i) => (
+          <div key={src} className="min-w-0 md:basis-0" style={{ flexGrow: group.w?.[i] ?? 1 }}>
+            <Img src={src} alt={`${title} — ${group.caption ?? "state"} ${i + 1}`} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
 type Row =
   | { kind: "row"; group: GalleryGroup }
+  | { kind: "page" | "wide" | "states"; group: GalleryGroup }
   | { kind: "singles"; groups: GalleryGroup[] };
 
 const toRows = (groups: GalleryGroup[]): Row[] => {
   const rows: Row[] = [];
   for (const g of groups) {
     const last = rows[rows.length - 1];
-    if (g.images.length > 1) rows.push({ kind: "row", group: g });
+    if (g.kind && g.kind !== "phones") rows.push({ kind: g.kind, group: g });
+    else if (g.images.length > 1) rows.push({ kind: "row", group: g });
     else if (last?.kind === "singles" && last.groups.length < 2) last.groups.push(g);
     else rows.push({ kind: "singles", groups: [g] });
   }
@@ -106,7 +166,13 @@ const CaseGallery = ({
       )}
 
       {toRows(groups).map((row, i) =>
-        row.kind === "row" ? (
+        row.kind === "page" ? (
+          <PageCard key={i} group={row.group} title={title} />
+        ) : row.kind === "wide" ? (
+          <WideCard key={i} group={row.group} title={title} />
+        ) : row.kind === "states" ? (
+          <StatesRow key={i} group={row.group} title={title} />
+        ) : row.kind === "row" ? (
           <PhoneRow key={i} group={row.group} title={title} />
         ) : (
           <div
