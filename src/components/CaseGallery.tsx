@@ -1,5 +1,5 @@
 import type { GalleryGroup } from "@/data/projects";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useInView } from "@/hooks/useInView";
 
 /**
@@ -65,9 +65,27 @@ const Img = ({ src, alt, className = "" }: { src: string; alt: string; className
   <img src={src} alt={alt} loading="lazy" decoding="async" className={`block w-full h-auto ${className}`} />
 );
 
-/** One tall page, collapsed to ~1.3 screens with a fade and a toggle. */
+/**
+ * One tall page, collapsed to ~1.3 screens with a fade and a toggle.
+ * While open, the toggle sticks to the bottom of the screen, so it can be
+ * collapsed from anywhere. After collapsing, the view jumps to the end of the
+ * collapsed card, so the next section is right there — no scrolling back up.
+ */
 const PageCard = ({ group, title }: { group: GalleryGroup; title: string }) => {
   const [open, setOpen] = useState(false);
+  const barRef = useRef<HTMLDivElement>(null);
+
+  const toggle = () => {
+    if (!open) return setOpen(true);
+    setOpen(false);
+    requestAnimationFrame(() => {
+      const bar = barRef.current;
+      if (!bar) return;
+      const top = bar.getBoundingClientRect().top;
+      window.scrollBy({ top: top - window.innerHeight * 0.45, behavior: "instant" as ScrollBehavior });
+    });
+  };
+
   return (
     <div>
       <Caption text={group.caption} />
@@ -78,11 +96,12 @@ const PageCard = ({ group, title }: { group: GalleryGroup; title: string }) => {
         >
           <Img src={group.images[0]} alt={`${title} — ${group.caption ?? "full page"}`} className={PAGE_RADIUS} />
         </div>
-        <div className="flex justify-center mt-6">
+        <div ref={barRef} className={`flex justify-center mt-6 ${open ? "sticky bottom-6 z-10" : ""}`}>
           <button
             type="button"
-            onClick={() => setOpen(!open)}
-            className="px-5 py-2.5 rounded-full border border-border text-sm font-body text-foreground hover:bg-secondary transition-colors"
+            onClick={toggle}
+            aria-expanded={open}
+            className="px-5 py-2.5 rounded-full border border-border text-sm font-body text-foreground bg-background/90 backdrop-blur hover:bg-secondary transition-colors"
           >
             {open ? "Collapse" : "Show full page"}
           </button>
