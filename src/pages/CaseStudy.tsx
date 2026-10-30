@@ -117,7 +117,7 @@ const CaseStudy = () => {
         </div>
 
         {/* Gallery: flow, pages, sections, states, phone rows */}
-        {project.gallery && <CaseGallery flow={project.flow} groups={project.gallery} title={project.title} />}
+        {project.gallery && <CaseGallery flow={project.flow} flowCaption={project.flowCaption} groups={project.gallery} title={project.title} />}
 
         {/* СЕКЦІЯ РІШЕНЬ + ФІНАЛЬНІ ОГЛЯДИ */}
         <div

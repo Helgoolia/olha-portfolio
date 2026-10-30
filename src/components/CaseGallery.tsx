@@ -170,10 +170,12 @@ const toRows = (groups: GalleryGroup[]): Row[] => {
 
 const CaseGallery = ({
   flow,
+  flowCaption,
   groups,
   title,
 }: {
   flow?: string;
+  flowCaption?: string;
   groups: GalleryGroup[];
   title: string;
 }) => {
@@ -188,7 +190,7 @@ const CaseGallery = ({
     >
       {flow && (
         <div>
-          <Caption text="User flow" />
+          <Caption text={flowCaption ?? "User flow"} />
           <div className={`${cardClass} p-6 md:p-12`}>
             <img
               src={flow}

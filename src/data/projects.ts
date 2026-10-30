@@ -13,6 +13,8 @@ export interface Project {
   cover: string;
   /** Optional user flow / structure diagram, shown before the gallery. */
   flow?: string;
+  /** Caption above the flow. Default: "User flow". */
+  flowCaption?: string;
   /** New gallery: each group is one row. 2+ images = phones in one row; 1 image = its own card (consecutive singles sit side by side). */
   gallery?: GalleryGroup[];
 }
@@ -40,9 +42,44 @@ const bb = (n: string) => `/projects/book-and-bite/${n}.webp`;
 const ph = (n: string) => `/projects/PureHair/${n}.webp`;
 const lg = (n: string) => `/projects/LawyerLP/${n}.webp`;
 const kf = (n: string) => `/projects/Kafka/${n}.webp`;
+const nv = (n: string) => `/projects/Nava/${n}.webp`;
 
 
 export const projects: Project[] = [
+  {
+    id: "nava",
+    title: "Nava",
+    description:
+      "A walking app that turns a daily walk into a game: audio practices, energy, personal and city ratings on one shared map.",
+    type: "Mobile App · UX/UI Design · Commercial",
+    tags: ["Mobile", "Gamification", "Commercial"],
+    problem:
+      "A walking community ran its daily practice across Telegram bots, chats and a separate tracker. Progress was hard to see, the rules (7 km at 5 km/h, monthly 9-day quests) were easy to break by accident, and there was no shared sense of a city growing together.",
+    role: "UX/UI Designer — wireframes, UI, design system",
+    tools: ["Figma"],
+    solution:
+      "One app built around a daily core loop: start a walk, listen, keep the pace, earn energy, grow. Free walks and monthly quests share the same loop; a subscription adds energy and protects quest progress when a day is missed. Personal energy lights up the city on a shared planet map, so every walk counts for you and for your city.",
+    decisions: [
+      "One core loop for free walks and quests — users learn the rules once",
+      "Quest day states (at risk, out, saved by subscription) made explicit, with a warning before progress is lost",
+      "Energy shown wherever it is earned — after a walk, on Home and in achievements",
+      "City and planet views connect personal progress to a shared goal",
+      "Edge cases designed up front: no internet, location off, deleted accounts",
+    ],
+    cover: "/projects/Nava/cover.webp",
+    flow: nv("00-flow"),
+    flowCaption: "Core loop",
+    gallery: [
+      { caption: "Onboarding", images: [nv("01-1-phone"), nv("01-2-phone"), nv("01-3-phone")] },
+      { caption: "Home → walk", images: [nv("02-1-phone"), nv("02-2-phone"), nv("02-3-phone")] },
+      { caption: "Audio practices", images: [nv("03-1-phone"), nv("03-2-phone")] },
+      { caption: "Rewards & energy", images: [nv("04-1-phone"), nv("04-2-phone"), nv("04-3-phone")] },
+      { caption: "9-day quest: calendar, at risk, out", images: [nv("05-1-phone"), nv("05-2-phone"), nv("05-3-phone")] },
+      { caption: "My city, planet & city ranking", images: [nv("06-1-phone"), nv("06-2-phone"), nv("06-3-phone")] },
+      { caption: "Community: feed, city chat, profile", images: [nv("07-1-phone"), nv("07-2-phone"), nv("07-3-phone")] },
+      { caption: "Edge cases", images: [nv("08-1-phone"), nv("08-2-phone"), nv("08-3-phone")] },
+    ],
+  },
   {
     id: "MyDaily",
     title: "My Daily",
