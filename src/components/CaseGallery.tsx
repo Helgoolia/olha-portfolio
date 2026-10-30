@@ -78,24 +78,35 @@ const PageCard = ({ group, title }: { group: GalleryGroup; title: string }) => {
   const toggle = () => {
     if (!open) return setOpen(true);
     setOpen(false);
-    requestAnimationFrame(() => {
-      const bar = barRef.current;
-      if (!bar) return;
-      const top = bar.getBoundingClientRect().top;
-      window.scrollBy({ top: top - window.innerHeight * 0.45, behavior: "instant" as ScrollBehavior });
-    });
+    // Wait two frames so the collapsed layout is in place before measuring.
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        const bar = barRef.current;
+        if (!bar) return;
+        const top = bar.getBoundingClientRect().top;
+        window.scrollBy({ top: top - window.innerHeight * 0.45, behavior: "instant" as ScrollBehavior });
+      }),
+    );
   };
 
   return (
     <div>
       <Caption text={group.caption} />
-      <div className={`${cardClass} p-6 md:p-12`}>
-        {open || !group.preview ? (
-          <Img src={group.images[0]} alt={`${title} — ${group.caption ?? "full page"}`} className={PAGE_RADIUS} />
+      <div className={`${cardClass} p-6 md:p-12`} style={{ overflowAnchor: "none" }}>
+        {group.preview ? (
+          <>
+            {/* Collapsed: pre-rendered top of the page with the fade baked in
+                (scripts/make_page_preview.py). Kept mounted and eager, so its height
+                is known the moment the page collapses. */}
+            <div className={`overflow-hidden ${PAGE_RADIUS} ${open ? "hidden" : ""}`}>
+              {group.preview.map((src, i) => (
+                <img key={src} src={src} alt={i === 0 ? `${title} — ${group.caption ?? "full page"}, top` : ""} decoding="async" className="block w-full h-auto" />
+              ))}
+            </div>
+            {open && <Img src={group.images[0]} alt={`${title} — ${group.caption ?? "full page"}`} className={PAGE_RADIUS} />}
+          </>
         ) : (
-          /* Collapsed: a pre-rendered top of the page with the fade baked in and dithered
-             (scripts/make_page_preview.py) — smooth on every screen, no CSS banding. */
-          <Img src={group.preview} alt={`${title} — ${group.caption ?? "full page"}, top`} className={PAGE_RADIUS} />
+          <Img src={group.images[0]} alt={`${title} — ${group.caption ?? "full page"}`} className={PAGE_RADIUS} />
         )}
         <div ref={barRef} className={`flex justify-center ${open ? "mt-6 sticky bottom-6 z-10" : "-mt-4"}`}>
           <button
