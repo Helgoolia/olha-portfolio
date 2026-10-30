@@ -20,10 +20,20 @@ export interface Project {
 export interface GalleryGroup {
   caption?: string;
   images: string[];
+  /**
+   * phones (default) — flat phone screens, rounded in code, rows of up to 3;
+   * page — one tall full page, collapsed with "Show full page";
+   * wide — one wide image (section, responsive lineup) at full card width;
+   * states — cards side by side, each sized by its real width (see `w`).
+   */
+  kind?: "phones" | "page" | "wide" | "states";
+  /** Natural widths of `images`, used by `states` to keep one scale. */
+  w?: number[];
 }
 
 const md = (n: string) => `/projects/MyDaily/${n}.webp`;
 const bb = (n: string) => `/projects/book-and-bite/${n}.webp`;
+const ph = (n: string) => `/projects/PureHair/${n}.webp`;
 
 
 export const projects: Project[] = [
@@ -157,5 +167,15 @@ export const projects: Project[] = [
       "Adaptive layout — both desktop and mobile tested and presented",
     ],
     cover: "/projects/PureHair/cover.webp",
+    gallery: [
+      { caption: "Full page", kind: "page", images: [ph("00-page")] },
+      { caption: "Hero CTA → call-back form", kind: "wide", images: [ph("01-section")] },
+      { caption: "Form states: error · filled · success", kind: "states", images: [ph("02-1-state"), ph("02-2-state"), ph("02-3-state")], w: [942, 942, 942] },
+      { caption: "Leave a review → Thank you", kind: "states", images: [ph("03-1-state"), ph("03-2-state")], w: [1800, 708] },
+      { caption: "Inner page: Privacy Policy", kind: "wide", images: [ph("04-page")] },
+      { caption: "Responsive: 1440 · 1024 · 768 · 393", kind: "wide", images: [ph("05-responsive")] },
+      { caption: "Mobile: home, menu & review", images: [ph("06-1-phone"), ph("06-2-phone"), ph("06-3-phone")] },
+      { caption: "Mobile: inner page", images: [ph("07-1-phone"), ph("07-2-phone")] },
+    ],
   },
 ];
