@@ -102,6 +102,14 @@ const PageCard = ({ group, title }: { group: GalleryGroup; title: string }) => {
           style={open ? undefined : { maskImage: FADE, WebkitMaskImage: FADE }}
         >
           <Img src={group.images[0]} alt={`${title} — ${group.caption ?? "full page"}`} className={PAGE_RADIUS} />
+          {!open && (
+            /* Fine grain over the fade zone: dithers the gradient so it doesn't band. */
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 opacity-[0.07]"
+              style={{ backgroundImage: "url(/noise.png)", backgroundSize: "128px 128px", maskImage: "linear-gradient(to bottom, transparent, #000 35%)", WebkitMaskImage: "linear-gradient(to bottom, transparent, #000 35%)" }}
+            />
+          )}
         </div>
         <div ref={barRef} className={`flex justify-center mt-6 ${open ? "sticky bottom-6 z-10" : ""}`}>
           <button
