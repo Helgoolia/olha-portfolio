@@ -36,6 +36,7 @@ export interface GalleryGroup {
 const md = (n: string) => `/projects/MyDaily/${n}.webp`;
 const bb = (n: string) => `/projects/book-and-bite/${n}.webp`;
 const ph = (n: string) => `/projects/PureHair/${n}.webp`;
+const lg = (n: string) => `/projects/LawyerLP/${n}.webp`;
 
 
 export const projects: Project[] = [
@@ -127,6 +128,16 @@ export const projects: Project[] = [
       "Fully adaptive — desktop and mobile layouts both designed and shown",
     ],
     cover: "/projects/LawyerLP/cover.webp",
+    gallery: [
+      { caption: "Full page", kind: "page", images: [lg("00-page")], preview: [lg("00-page-preview-top"), lg("00-page-preview-fade")] },
+      { caption: "Menu overlay", kind: "wide", images: [lg("03-section")] },
+      { caption: "Floating CTA: write to us → letter sent", kind: "states", images: [lg("01-1-state"), lg("01-2-state")], w: [792, 792] },
+      { caption: "Floating CTA: order a call → confirmed", kind: "states", images: [lg("02-1-state"), lg("02-2-state")], w: [792, 792] },
+      { caption: "Our Expertise: practice areas & process", kind: "wide", images: [lg("04-section")] },
+      { caption: "Trusted Experts", kind: "wide", images: [lg("05-section")] },
+      { caption: "Inner page: free consultation booking", kind: "wide", images: [lg("06-page")] },
+      { caption: "Mobile: hero, expertise, footer", images: [lg("07-1-phone"), lg("07-2-phone"), lg("07-3-phone")] },
+    ],
   },
   {
     id: "metamorphosis",

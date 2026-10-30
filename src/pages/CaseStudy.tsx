@@ -28,7 +28,6 @@ const CaseStudy = () => {
 
   if (!project) return null;
 
-  const isLawyerLP = id === "lawyer-company";
   const isKafka = id === "metamorphosis";
 
   return (
@@ -128,13 +127,6 @@ const CaseStudy = () => {
           className="max-w-7xl mx-auto px-6 mb-8 md:mb-12"
         >
           <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-0 flex justify-center border border-border/40 overflow-hidden">
-            {isLawyerLP && (
-              <img
-                src="/projects/LawyerLP/LawyerLP_Hero-Nav.webp"
-                alt="Hero"
-                className="w-full h-auto rounded-xl md:rounded-2xl"
-              />
-            )}
             {isKafka && (
               <img
                 src="/projects/Kafka/Kafka_Hero.webp"
@@ -152,40 +144,6 @@ const CaseStudy = () => {
           ref={galleryRef}
           className={`max-w-7xl mx-auto px-6 mb-20 space-y-8 md:space-y-12 ${galleryInView ? "animate-fade-up" : "opacity-0"}`}
         >
-          {isLawyerLP && (
-            <>
-              <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center">
-                <img loading="lazy" decoding="async"
-                  src="/projects/LawyerLP/LawyerLP_Our-Services.webp"
-                  className="w-full h-auto max-w-4xl rounded-xl md:rounded-2xl"
-                  alt="Services"
-                />
-              </div>
-              <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center">
-                <img loading="lazy" decoding="async"
-                  src="/projects/LawyerLP/LawyerLP_CTA-Steps.webp"
-                  className="w-full h-auto rounded-none"
-                  alt="CTA Steps"
-                />
-              </div>
-              <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-                <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img loading="lazy" decoding="async"
-                    src="/projects/LawyerLP/LawyerLP_Hero-Nav-Mobile.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
-                    alt="Mobile Hero"
-                  />
-                </div>
-                <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img loading="lazy" decoding="async"
-                    src="/projects/LawyerLP/LawyerLP_Experts-Mobile.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
-                    alt="Mobile Experts"
-                  />
-                </div>
-              </div>
-            </>
-          )}
 
           {isKafka && (
             <>
@@ -245,24 +203,6 @@ const CaseStudy = () => {
 
           {!project.gallery && (
           <div className="space-y-8 md:space-y-12">
-            {isLawyerLP && (
-              <>
-                <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center animate-fade-up">
-                  <img loading="lazy" decoding="async"
-                    src="/projects/LawyerLP/LawyerLP_Components.webp"
-                    className="w-full h-auto rounded-xl md:rounded-2xl"
-                    alt="UI Kit"
-                  />
-                </div>
-                <div className="rounded-xl md:rounded-2xl bg-secondary/50 px-6 md:px-12 py-0 border border-border/40 flex justify-center overflow-hidden animate-fade-up">
-                  <img loading="lazy" decoding="async"
-                    src="/projects/LawyerLP/LawyerLP_Overview.webp"
-                    className="w-full h-auto rounded-none"
-                    alt="Lawyer Overview"
-                  />
-                </div>
-              </>
-            )}
             {isKafka && (
               <div className="rounded-xl md:rounded-2xl bg-secondary/50 px-6 md:px-12 py-0 border border-border/40 flex justify-center overflow-hidden animate-fade-up">
                 <img loading="lazy" decoding="async"
