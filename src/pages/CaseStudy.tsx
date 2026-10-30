@@ -20,7 +20,6 @@ const CaseStudy = () => {
   const [heroRef, heroInView] = useInView(0.1);
   const [contentRef, contentInView] = useInView(0.1);
   const [decisionsRef, decisionsInView] = useInView(0.1);
-  const [galleryRef, galleryInView] = useInView(0.1);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -28,7 +27,6 @@ const CaseStudy = () => {
 
   if (!project) return null;
 
-  const isKafka = id === "metamorphosis";
 
   return (
     <>
@@ -118,64 +116,8 @@ const CaseStudy = () => {
           </div>
         </div>
 
-        {/* NEW GALLERY: flow + rows of screens */}
+        {/* Gallery: flow, pages, sections, states, phone rows */}
         {project.gallery && <CaseGallery flow={project.flow} groups={project.gallery} title={project.title} />}
-
-        {/* Legacy first image (cases not yet moved to the new gallery) */}
-        {!project.gallery && (
-        <div
-          className="max-w-7xl mx-auto px-6 mb-8 md:mb-12"
-        >
-          <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-0 flex justify-center border border-border/40 overflow-hidden">
-            {isKafka && (
-              <img
-                src="/projects/Kafka/Kafka_Hero.webp"
-                alt="Hero"
-                className="w-full h-auto rounded-xl md:rounded-2xl"
-              />
-            )}
-          </div>
-        </div>
-        )}
-
-        {/* ДИНАМІЧНА ГАЛЕРЕЯ */}
-        {!project.gallery && (
-        <div
-          ref={galleryRef}
-          className={`max-w-7xl mx-auto px-6 mb-20 space-y-8 md:space-y-12 ${galleryInView ? "animate-fade-up" : "opacity-0"}`}
-        >
-
-          {isKafka && (
-            <>
-              <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-12 border border-border/40 flex justify-center">
-                <img loading="lazy" decoding="async"
-                  src="/projects/Kafka/Kafka_Illustration-Detail.webp"
-                  className="w-full h-auto max-w-5xl rounded-xl md:rounded-2xl"
-                  alt="Detail"
-                />
-              </div>
-              <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-                <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img loading="lazy" decoding="async"
-                    src="/projects/Kafka/Kafka_Hero-Mobile.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
-                    alt="Mobile Hero"
-                  />
-                </div>
-                <div className="rounded-xl md:rounded-2xl bg-secondary/50 p-6 md:p-10 border border-border/40 flex items-center justify-center">
-                  <img loading="lazy" decoding="async"
-                    src="/projects/Kafka/Kafka_Story-Mobile.webp"
-                    className="w-auto h-auto max-h-[400px] md:max-h-[600px]"
-                    alt="Mobile Story"
-                  />
-                </div>
-              </div>
-            </>
-          )}
-
-
-        </div>
-        )}
 
         {/* СЕКЦІЯ РІШЕНЬ + ФІНАЛЬНІ ОГЛЯДИ */}
         <div
@@ -185,7 +127,7 @@ const CaseStudy = () => {
           <h2 className="text-2xl md:text-3xl font-heading font-bold mb-8">
             Key Design Decisions
           </h2>
-          <div className="space-y-4 mb-12 md:mb-20">
+          <div className="space-y-4">
             {project.decisions.map((decision, i) => (
               <div
                 key={i}
@@ -201,19 +143,6 @@ const CaseStudy = () => {
             ))}
           </div>
 
-          {!project.gallery && (
-          <div className="space-y-8 md:space-y-12">
-            {isKafka && (
-              <div className="rounded-xl md:rounded-2xl bg-secondary/50 px-6 md:px-12 py-0 border border-border/40 flex justify-center overflow-hidden animate-fade-up">
-                <img loading="lazy" decoding="async"
-                  src="/projects/Kafka/Kafka_Overview.webp"
-                  className="w-full h-auto rounded-none"
-                  alt="Overview"
-                />
-              </div>
-            )}
-          </div>
-          )}
         </div>
 
         {/* НАВІГАЦІЯ ВНИЗУ */}

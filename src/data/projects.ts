@@ -37,6 +37,7 @@ const md = (n: string) => `/projects/MyDaily/${n}.webp`;
 const bb = (n: string) => `/projects/book-and-bite/${n}.webp`;
 const ph = (n: string) => `/projects/PureHair/${n}.webp`;
 const lg = (n: string) => `/projects/LawyerLP/${n}.webp`;
+const kf = (n: string) => `/projects/Kafka/${n}.webp`;
 
 
 export const projects: Project[] = [
@@ -159,6 +160,14 @@ export const projects: Project[] = [
       "Adaptive layout — full desktop and mobile views designed",
     ],
     cover: "/projects/Kafka/cover.webp",
+    gallery: [
+      { caption: "Full page", kind: "page", images: [kf("00-page")], preview: [kf("00-page-preview-top"), kf("00-page-preview-fade")] },
+      { caption: "How to participate: rules & submission form", kind: "wide", images: [kf("01-section")] },
+      { caption: "Story highlights carousel", kind: "wide", images: [kf("02-section")] },
+      { caption: "Past winners: pick a name to see the work", kind: "states", images: [kf("03-1-state"), kf("03-2-state")], w: [2160, 2160] },
+      { caption: "FAQ accordion", kind: "wide", images: [kf("04-section")] },
+      { caption: "Mobile: hero, menu, submission", images: [kf("05-1-phone"), kf("05-2-phone"), kf("05-3-phone")] },
+    ],
   },
   {
     id: "pure-hair-salon",
