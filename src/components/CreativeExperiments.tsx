@@ -19,7 +19,7 @@ const monsters = [
 
 /** Shown in the grid; the lightbox still pages through the whole series. */
 const SHOWN = 6;
-const BEHANCE_URL = "https://www.behance.net/helgoolia";
+const BEHANCE_URL = "https://www.behance.net/gallery/156867477/Ineffable-Monsters-Vector-Characters";
 
 const CreativeExperiments = () => {
   const [ref, inView] = useInView(0.1);
