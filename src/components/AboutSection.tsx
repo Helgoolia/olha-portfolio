@@ -43,9 +43,15 @@ const AboutSection = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground font-body leading-[1.7] mb-8">
               <p>
-                I'm Olha, a UX/UI designer based in Kyiv, Ukraine. I specialize
-                in scalable design systems, complex SaaS interfaces, and
-                production-ready UI for web and mobile products.
+                I'm Olha, a UX/UI designer based in Kyiv, Ukraine. I design
+                mobile and web products end to end, from flows to
+                production-ready UI and design systems.
+              </p>
+              <p>
+                Most recently I spent eight months at MW MEDIA Global, a German
+                startup, designing two AI SaaS products and their design system
+                from scratch. That work is under NDA; happy to walk through it
+                in an interview.
               </p>
               <p>
                 Before UX, I spent years as a vector illustrator — that craft

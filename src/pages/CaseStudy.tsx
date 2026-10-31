@@ -105,14 +105,6 @@ const CaseStudy = () => {
                     </p>
                   </div>
                 )}
-                <div>
-                  <h3 className="text-[11px] font-body uppercase tracking-[0.2em] text-primary mb-2">
-                    Tools
-                  </h3>
-                  <p className="text-muted-foreground font-body text-sm md:text-base">
-                    {project.tools.join(" · ")}
-                  </p>
-                </div>
               </div>
             </div>
             <div>

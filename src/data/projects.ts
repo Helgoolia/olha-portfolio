@@ -9,7 +9,6 @@ export interface Project {
   scope: string;
   /** Year and duration, e.g. "2026 · 17 weeks". */
   timeline?: string;
-  tools: string[];
   solution: string;
   decisions: string[];
   /** Behance-style cover, 1920×1500. Used on the home card and as the case hero. */
@@ -60,7 +59,6 @@ export const projects: Project[] = [
       "The walking community ran its daily practice across five tools: a Telegram channel for news, a Telegram chat per city, a Telegram bot for audio, any step tracker plus a screenshot sent to a curator, and a Google Sheet where admins tallied the rating. Progress was hard to see, the rules (7 km at 5 km/h, a monthly 9-day quest) were easy to break without noticing, and a city's shared progress lived only in chat posts.",
     scope: "Audit of the existing journey, UX flows, UI, design system",
     timeline: "2026 · 17 weeks (3 UX + 14 UI)",
-    tools: ["Figma"],
     solution:
       "One app built around a daily core loop: start a walk, listen, keep the pace, earn energy, grow. Each old tool found a place inside it: distance and pace are counted automatically, the player runs inside the walk, the quest calendar replaces the channel, the rating is calculated on the server, and the city chat and feed sit one tab away. Personal energy lights up the city on a shared planet map, so every walk counts twice: for the walker and for their city.",
     decisions: [
@@ -87,21 +85,19 @@ export const projects: Project[] = [
   {
     id: "MyDaily",
     title: "My Daily",
-    description:
-      "A mobile productivity and time tracking app focused on task scheduling and daily activity management.",
-    type: "Mobile App · UX/UI Design",
-    tags: ["Productivity", "Time Management", "Mobile UX"],
-    problem:
-      "Many productivity apps feel overloaded with features, complex navigation, or distracting interfaces. Users often struggle to quickly organize tasks, track time, and maintain focus throughout the day without unnecessary friction.",
-    scope: "Redesign: UX, UI",
-    tools: ["Figma (prototyping)", "Photoshop", "ChatGPT"],
-    solution:
-      "A minimal and structured productivity app designed around quick task management and lightweight time tracking. The experience focuses on reducing cognitive load through clear hierarchy, simple navigation, and streamlined scheduling interactions.",
+    description: "A time-tracking app where tasks and time live together: plan, start a timer, see where the day went.",
+    type: "Mobile App · Concept",
+    tags: ["Productivity", "Time Tracking", "AI"],
+    problem: "Most productivity apps split planning and time tracking into separate tools, so tasks drift away from reality and logging time feels like a chore.",
+    scope: "UX, UI, design system, redesign after interview feedback",
+    solution: "Tasks and time in one flow. Start a timer right from a task, let AI break a big task into subtasks, and review the day in Activity, including unassigned time that can be attached to a task later.",
     decisions: [
-      "Task cards designed with color-coded outlines and lightweight visual hierarchy for quick scanning",
-      "Integrated time tracking directly into task flow to reduce context switching between planning and execution",
-      "Minimal dark interface with subtle accent colors to support long-term usability and focus",
-      "Separated Today and History views to simplify daily task management and improve clarity of past activity records",
+      "The timer starts from the task row, with no switching between planning and tracking",
+      "AI suggests subtasks for big tasks; the user keeps or edits them",
+      "Unassigned time isn't lost: it can be assigned later, and History allows reassigning",
+      "Today and History are separate: today stays focused, the past stays easy to review",
+      "Six colour modes in the design system, one per task type (Focus, Urgent, Routine…)",
+      "Sharing built in: a visit card from the profile (PDF) and logs of completed tasks",
     ],
     cover: "/projects/MyDaily/cover.webp",
     flow: md("00-flow"),
@@ -122,21 +118,19 @@ export const projects: Project[] = [
   {
     id: "book-and-bite",
     title: "Book & Bite",
-    description:
-      "A mobile restaurant discovery and table booking app. Full end-to-end UX/UI case study.",
-    type: "Mobile App · UX/UI Design",
-    tags: ["Mobile", "Food Tech", "Competitive Analysis"],
-    problem:
-      "Finding and booking a restaurant through existing apps feels fragmented — users switch between review platforms, mapping apps, and booking tools. Book&Bite brings discovery, reviews, and reservations into a single, intuitive mobile flow.",
-    scope: "Research, UX, UI · course project",
-    tools: ["Figma (prototyping)", "Photoshop", "ChatGPT"],
-    solution:
-      "A streamlined mobile app with a clear three-step booking flow: browse → select → confirm. Key design decisions included a restaurant card system for quick scanning, a persistent bottom navigation, and a streamlined date/time picker that reduces friction in the reservation step.",
+    description: "Restaurant discovery and table booking in one flow, down to choosing a table on the hall map.",
+    type: "Mobile App · Concept",
+    tags: ["Food & Dining", "Booking", "Competitor Analysis"],
+    problem: "Finding a place and booking a table usually means switching between rating sites, maps and phone calls. Book&Bite brings discovery and reservations into one mobile flow.",
+    scope: "Competitor analysis, IA, UX, UI, design system, prototype",
+    timeline: "8 weeks",
+    solution: "Search with filters, a restaurant page with everything needed to decide, then booking in two steps: date, time and guests → a table on an interactive hall layout → summary. Reservations live in My Places, where they can be tracked or cancelled.",
     decisions: [
-      "Card-based restaurant list with photo, rating, cuisine tags, and budget level — scannable at a glance",
-      "Booking flow reduced to 3 core steps: pick restaurant → choose time → confirm",
-      "Visual seat selection feature — users can choose specific tables and halls on an interactive layout map",
-      "Micro-interactions and animated transitions designed in Figma prototype to guide users through the flow",
+      "Location, date, time and guests are set once on Home and carried through search",
+      "Filters for cuisine, bill, distance, kids' menu and vegan options, shown as chips on the list",
+      "A table is chosen on an interactive hall layout: halls, VIP rooms, terrace",
+      "An editable summary before confirming the booking",
+      "After booking: a Pending status and Cancel right in My Places",
     ],
     cover: "/projects/book-and-bite/cover.webp",
     flow: bb("00-flow"),
@@ -154,22 +148,19 @@ export const projects: Project[] = [
   },
   {
     id: "lawyer-company",
-    title: "Lawyer Company",
-    description:
-      "A clean, conversion-focused one-page website for a legal services firm.",
-    type: "Landing Page · Web UI",
-    tags: ["Landing Page", "Minimalist", "CTA"],
-    problem:
-      "Law firms often rely on dense, text-heavy websites that feel cold and intimidating to potential clients. This project explored how minimalist design and clear information hierarchy can build trust and guide users toward making contact.",
-    scope: "UX, UI, responsive · concept",
-    tools: ["Figma", "ChatGPT"],
-    solution:
-      "A single-page layout with a strong typographic hierarchy, generous whitespace, and a clear primary CTA visible above the fold. The design uses a restrained monochromatic palette to communicate authority, with subtle hover animations on navigation and buttons.",
+    title: "Legal Co.",
+    description: "A law firm landing page with two always-visible ways to reach a lawyer and a step-by-step consultation booking.",
+    type: "Landing Page · Concept",
+    tags: ["Legal Services", "Consultation Booking", "Responsive"],
+    problem: "Law firm websites are often dense and text-heavy, which feels cold to someone who already has a problem. The task was to build trust quickly and make it easy to get in touch.",
+    scope: "UX, UI, UI kit, desktop and mobile",
+    solution: "A strict, square layout in navy and orange. Trust signals come first: results, experts, client stories. Practice areas sit in an accordion with a four-step process. Floating buttons let you write or order a call from any point. A free consultation is booked in a short three-step form on its own page.",
     decisions: [
-      "Monochromatic palette (near-black, white, one gold accent) to project trust and authority",
-      "Hero section leads with a single strong headline and one CTA — no distractions",
-      "Services section uses icon + title + short paragraph — scannable and professional",
-      "Fully adaptive — desktop and mobile layouts both designed and shown",
+      "Navy with one orange accent and sharp corners throughout: serious, not cold",
+      "Floating write/call buttons with short forms and clear confirmations",
+      "Practice areas as an accordion with a numbered four-step process",
+      "Consultation booked in three steps on a separate page, with progress shown",
+      "On mobile, content is stacked and the floating buttons stay in reach",
     ],
     cover: "/projects/LawyerLP/cover.webp",
     gallery: [
@@ -185,22 +176,19 @@ export const projects: Project[] = [
   },
   {
     id: "metamorphosis",
-    title: "Metamorphosis",
-    description:
-      "Contest platform landing page with original Kafka-inspired illustration and atmospheric visual design.",
-    type: "Landing Page · Illustration",
-    tags: ["Landing Page", "Illustration", "Literary"],
-    problem:
-      "Contest platforms often feel generic and utilitarian. Metamorphosis required a landing page that would itself feel like a piece of art — drawing in participants emotionally before they read a word of the copy.",
-    scope: "UI, visual direction, responsive · concept",
-    tools: ["Figma", "Adobe Illustrator", "Photoshop"],
-    solution:
-      "A dark, atmospheric one-page design featuring original Kafka-inspired vector illustrations created specifically for this project. The illustration and layout work together to create an immersive, editorial feel that stands apart from typical contest sites.",
+    title: "Kafka Art Society",
+    description: "A landing page for a monthly art contest inspired by Kafka: a dark, atmospheric theme built on smoke textures and glow.",
+    type: "Landing Page · Concept",
+    tags: ["Art & Culture", "Contest Platform", "Visual Direction"],
+    problem: "Contest pages often look like a form with rules attached. This one had to set the mood of Kafka's world first and still make the rules and submission easy.",
+    scope: "UX, UI, visual direction, desktop and mobile",
+    solution: "A dark teal theme with smoke-like textures, glow and an editorial serif. Under the mood, a clear path: this month's challenge, how to participate with a submission form, story highlights in a carousel, past winners by challenge, and an FAQ. Artworks shown are placeholder imagery.",
     decisions: [
-      "Custom illustration as the hero — not stock, not photography, but original art tied to the theme",
-      "Dark atmospheric palette with textured, literary feel",
-      "Information hierarchy that balances emotion (illustration) with function (contest rules, dates, CTA)",
-      "Adaptive layout — full desktop and mobile views designed",
+      "Atmosphere comes from backgrounds and light (smoke textures, glow, serif headings), not from illustration",
+      "One primary action, Submit your artwork, repeated at key points",
+      "The story is told in a six-page carousel, so the section stays short",
+      "Past winners: pick a name to see the work, switch challenges with the arrows",
+      "FAQ as an accordion keeps the rules out of the way",
     ],
     cover: "/projects/Kafka/cover.webp",
     gallery: [
@@ -214,22 +202,20 @@ export const projects: Project[] = [
   },
   {
     id: "pure-hair-salon",
-    title: "Pure Hair Salon",
-    description:
-      "A warm, elegant landing page concept for a premium hair care salon.",
-    type: "Landing Page · Web UI",
-    tags: ["Beauty", "Landing Page", "Lifestyle"],
+    title: "Pure Hair",
+    description: "A salon landing page designed for four breakpoints, with a one-field call-back form and reviews with photo upload.",
+    type: "Landing Page · Concept",
+    tags: ["Beauty", "Booking", "Responsive"],
     problem:
       "Beauty service businesses often have outdated or cluttered websites that don't reflect the quality of their actual service. This concept explored how a minimal, elevated landing page could position a hair salon as a premium, trustworthy brand.",
-    scope: "UX, UI, four breakpoints · concept",
-    tools: ["Figma"],
-    solution:
-      "A light, soft-toned landing page using natural imagery, generous whitespace, and a warm color palette to evoke cleanliness and care. The layout guides the user naturally from services → how it works → booking CTA.",
+    scope: "UX, UI, four breakpoints (1440 / 1024 / 768 / 393)",
+    solution: "Soft purple and mint with rounded shapes. Services sit in tabs with prices next to the photos. One primary action, Book a call, leads to a single-field call-back form. Clients can leave a review with a photo, and secondary pages like Privacy Policy reuse the same system.",
     decisions: [
-      "Warm, muted palette (cream, nude, soft brown) — approachable and premium without feeling generic",
-      "Hero with full-bleed image + minimal text overlay — emotional first impression",
-      "Services presented as a clean card grid with icons — scannable and clear",
-      "Adaptive layout — both desktop and mobile tested and presented",
+      "Every CTA leads to one place: a call-back form with a single phone field",
+      "Form states designed: error, filled, success",
+      "Services in tabs with a price list beside the photos, with no extra page",
+      "Review form: only the initial shown publicly, optional photo, character counter",
+      "Each of the four breakpoints has its own layout, not just a shrink",
     ],
     cover: "/projects/PureHair/cover.webp",
     gallery: [
