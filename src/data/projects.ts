@@ -5,7 +5,10 @@ export interface Project {
   type: string;
   tags: string[];
   problem: string;
-  role: string;
+  /** What I did on the project (shown as "Scope"). */
+  scope: string;
+  /** Year and duration, e.g. "2026 · 17 weeks". */
+  timeline?: string;
   tools: string[];
   solution: string;
   decisions: string[];
@@ -50,19 +53,20 @@ export const projects: Project[] = [
     id: "nava",
     title: "Nava",
     description:
-      "A walking app that turns a daily walk into a game: audio practices, energy, personal and city ratings on one shared map.",
-    type: "Mobile App · UX/UI Design · Commercial",
-    tags: ["Mobile", "Gamification", "Commercial"],
+      "A gamified walking app: a daily walk with audio practices, energy, and personal and city ratings on one shared map.",
+    type: "Mobile App · Commercial",
+    tags: ["Mobile", "Gamification", "Product Design"],
     problem:
-      "A walking community ran its daily practice across Telegram bots, chats and a separate tracker. Progress was hard to see, the rules (7 km at 5 km/h, monthly 9-day quests) were easy to break by accident, and there was no shared sense of a city growing together.",
-    role: "UX/UI Designer — UX, UI, design system",
+      "The walking community ran its daily practice across five tools: a Telegram channel for news, a Telegram chat per city, a Telegram bot for audio, any step tracker plus a screenshot sent to a curator, and a Google Sheet where admins tallied the rating. Progress was hard to see, the rules (7 km at 5 km/h, a monthly 9-day quest) were easy to break without noticing, and a city's shared progress lived only in chat posts.",
+    scope: "Audit of the existing journey, UX flows, UI, design system, edge cases",
+    timeline: "2026 · 17 weeks (3 UX + 14 UI)",
     tools: ["Figma"],
     solution:
-      "One app built around a daily core loop: start a walk, listen, keep the pace, earn energy, grow. Free walks and monthly quests share the same loop; a subscription adds energy and protects quest progress when a day is missed. Personal energy lights up the city on a shared planet map, so every walk counts twice: for the walker and for their city.",
+      "One app built around a daily core loop: start a walk, listen, keep the pace, earn energy, grow. Each old tool found a place inside it: distance and pace are counted automatically, the player runs inside the walk, the quest calendar replaces the channel, the rating is calculated on the server, and the city chat and feed sit one tab away. Personal energy lights up the city on a shared planet map, so every walk counts twice: for the walker and for their city.",
     decisions: [
       "One core loop for free walks and quests — users learn the rules once",
-      "Quest day states (at risk, out, saved by subscription) made explicit, with a warning before progress is lost",
-      "Energy shown wherever it is earned — after a walk, on Home and in achievements",
+      "Every quest day has an explicit state (in progress, at risk, out, saved by subscription), with a warning before progress is lost",
+      "Energy is shown wherever it is earned: after a walk, on Home and in achievements",
       "City and planet views connect personal progress to a shared goal",
       "Edge cases designed up front: no internet, location off, deleted accounts",
     ],
@@ -89,7 +93,7 @@ export const projects: Project[] = [
     tags: ["Productivity", "Time Management", "Mobile UX"],
     problem:
       "Many productivity apps feel overloaded with features, complex navigation, or distracting interfaces. Users often struggle to quickly organize tasks, track time, and maintain focus throughout the day without unnecessary friction.",
-    role: "Lead UX/UI Designer",
+    scope: "Redesign: UX, UI",
     tools: ["Figma (prototyping)", "Photoshop", "ChatGPT"],
     solution:
       "A minimal and structured productivity app designed around quick task management and lightweight time tracking. The experience focuses on reducing cognitive load through clear hierarchy, simple navigation, and streamlined scheduling interactions.",
@@ -124,7 +128,7 @@ export const projects: Project[] = [
     tags: ["Mobile", "Food Tech", "Competitive Analysis"],
     problem:
       "Finding and booking a restaurant through existing apps feels fragmented — users switch between review platforms, mapping apps, and booking tools. Book&Bite brings discovery, reviews, and reservations into a single, intuitive mobile flow.",
-    role: "Lead UX/UI Designer",
+    scope: "Research, UX, UI · course project",
     tools: ["Figma (prototyping)", "Photoshop", "ChatGPT"],
     solution:
       "A streamlined mobile app with a clear three-step booking flow: browse → select → confirm. Key design decisions included a restaurant card system for quick scanning, a persistent bottom navigation, and a streamlined date/time picker that reduces friction in the reservation step.",
@@ -157,7 +161,7 @@ export const projects: Project[] = [
     tags: ["Landing Page", "Minimalist", "CTA"],
     problem:
       "Law firms often rely on dense, text-heavy websites that feel cold and intimidating to potential clients. This project explored how minimalist design and clear information hierarchy can build trust and guide users toward making contact.",
-    role: "UI/UX Designer",
+    scope: "UX, UI, responsive · concept",
     tools: ["Figma", "ChatGPT"],
     solution:
       "A single-page layout with a strong typographic hierarchy, generous whitespace, and a clear primary CTA visible above the fold. The design uses a restrained monochromatic palette to communicate authority, with subtle hover animations on navigation and buttons.",
@@ -188,7 +192,7 @@ export const projects: Project[] = [
     tags: ["Landing Page", "Illustration", "Literary"],
     problem:
       "Contest platforms often feel generic and utilitarian. Metamorphosis required a landing page that would itself feel like a piece of art — drawing in participants emotionally before they read a word of the copy.",
-    role: "Full UX/UI Design + Custom Illustration",
+    scope: "UI, visual direction, responsive · concept",
     tools: ["Figma", "Adobe Illustrator", "Photoshop"],
     solution:
       "A dark, atmospheric one-page design featuring original Kafka-inspired vector illustrations created specifically for this project. The illustration and layout work together to create an immersive, editorial feel that stands apart from typical contest sites.",
@@ -217,7 +221,7 @@ export const projects: Project[] = [
     tags: ["Beauty", "Landing Page", "Lifestyle"],
     problem:
       "Beauty service businesses often have outdated or cluttered websites that don't reflect the quality of their actual service. This concept explored how a minimal, elevated landing page could position a hair salon as a premium, trustworthy brand.",
-    role: "Full UX/UI Design",
+    scope: "UX, UI, four breakpoints · concept",
     tools: ["Figma"],
     solution:
       "A light, soft-toned landing page using natural imagery, generous whitespace, and a warm color palette to evoke cleanliness and care. The layout guides the user naturally from services → how it works → booking CTA.",
