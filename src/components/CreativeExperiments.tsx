@@ -17,6 +17,10 @@ const monsters = [
   "/monsters/monster-12.webp",
 ];
 
+/** Shown in the grid; the lightbox still pages through the whole series. */
+const SHOWN = 6;
+const BEHANCE_URL = "https://www.behance.net/helgoolia";
+
 const CreativeExperiments = () => {
   const [ref, inView] = useInView(0.1);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -77,7 +81,7 @@ const CreativeExperiments = () => {
 
         {/* ПРАВКА 2: Горизонтальний скрол на мобільці, сітка на десктопі */}
         <div className="flex overflow-x-auto pb-8 md:pb-0 md:grid md:grid-cols-3 gap-6 md:gap-10 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory scrollbar-hide">
-          {monsters.map((src, index) => (
+          {monsters.slice(0, SHOWN).map((src, index) => (
             <div
               key={index}
               onClick={() => openLightbox(index)}
@@ -96,6 +100,15 @@ const CreativeExperiments = () => {
             </div>
           ))}
         </div>
+
+        <a
+          href={BEHANCE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 mt-8 md:mt-10 font-body text-sm md:text-base text-primary hover:underline underline-offset-4"
+        >
+          See the full series on Behance <ArrowRight className="w-4 h-4" />
+        </a>
       </div>
 
       {/* LIGHTBOX залишаємо без змін, він чудовий */}

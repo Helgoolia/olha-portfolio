@@ -23,19 +23,10 @@ const AboutSection = () => {
       <div className="max-w-7xl mx-auto">
         <div
           ref={ref}
-          className={`grid md:grid-cols-[280px_1fr] gap-16 items-start ${
+          className={`grid md:grid-cols-2 gap-10 md:gap-10 items-center ${
             inView ? "animate-fade-up" : "opacity-0"
           }`}
         >
-          {/* Photo */}
-          <div className="flex justify-center md:justify-start">
-            <img
-              src="/avatar.webp" 
-              alt="Olha - UX/UI Designer"
-              className="w-56 h-56 rounded-full object-cover border border-border/40 shadow-xl"
-            />
-          </div>
-
           {/* Bio */}
           <div>
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
@@ -77,6 +68,15 @@ const AboutSection = () => {
               ))}
             </div>
           </div>
+          {/* Photo */}
+          <div className="flex justify-center order-first md:order-none">
+            <img
+              src="/avatar.webp" 
+              alt="Olha - UX/UI Designer"
+              className="w-56 h-56 md:w-80 md:h-80 rounded-full object-cover border border-border/40"
+            />
+          </div>
+
         </div>
       </div>
     </section>
