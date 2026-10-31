@@ -86,15 +86,25 @@ const CaseStudy = () => {
                   {project.problem}
                 </p>
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
+              <div className="grid grid-cols-2 gap-x-4 gap-y-6">
+                <div className="col-span-2">
                   <h3 className="text-[11px] font-body uppercase tracking-[0.2em] text-primary mb-2">
-                    Role
+                    Scope
                   </h3>
                   <p className="text-muted-foreground font-body text-sm md:text-base">
-                    {project.role}
+                    {project.scope}
                   </p>
                 </div>
+                {project.timeline && (
+                  <div>
+                    <h3 className="text-[11px] font-body uppercase tracking-[0.2em] text-primary mb-2">
+                      Timeline
+                    </h3>
+                    <p className="text-muted-foreground font-body text-sm md:text-base">
+                      {project.timeline}
+                    </p>
+                  </div>
+                )}
                 <div>
                   <h3 className="text-[11px] font-body uppercase tracking-[0.2em] text-primary mb-2">
                     Tools
