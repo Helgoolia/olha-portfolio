@@ -32,12 +32,12 @@ const ContactSection = () => {
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
             Let's Work Together
           </h2>
-          <p className="text-muted-foreground font-body text-lg mb-12">
+          <p className="text-muted-foreground font-body text-lg mb-8 md:mb-12">
             Open to full-time product design roles at startups and tech
             companies.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6">
             {contacts.map((c) => (
               <a
                 key={c.label}

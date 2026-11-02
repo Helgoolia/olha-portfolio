@@ -127,8 +127,12 @@ const PageCard = ({ group, title }: { group: GalleryGroup; title: string }) => {
 const WideCard = ({ group, title }: { group: GalleryGroup; title: string }) => (
   <div>
     <Caption text={group.caption} />
-    <div className={`${cardClass} p-6 md:p-12`}>
-      <Img src={group.images[0]} alt={`${title} — ${group.caption ?? "section"}`} className={PAGE_RADIUS} />
+    <div className={`${cardClass} py-5 md:p-12 overflow-x-auto md:overflow-visible scrollbar-hide`}>
+      <div className="px-5 md:px-0 w-max md:w-auto">
+        <div className="w-[760px] md:w-auto">
+          <Img src={group.images[0]} alt={`${title} — ${group.caption ?? "section"}`} className={PAGE_RADIUS} />
+        </div>
+      </div>
     </div>
   </div>
 );
@@ -191,7 +195,8 @@ const CaseGallery = ({
       {flow && (
         <div>
           <Caption text={flowCaption ?? "User flow"} />
-          <div className={`${cardClass} p-6 md:p-12`}>
+          <div className={`${cardClass} py-5 md:p-12 overflow-x-auto md:overflow-visible scrollbar-hide`}>
+            <div className="px-5 md:px-0 w-max md:w-auto"><div className="w-[860px] md:w-auto">
             <img
               src={flow}
               alt={`${title} — user flow`}
@@ -199,6 +204,7 @@ const CaseGallery = ({
               decoding="async"
               className="w-full h-auto"
             />
+            </div></div>
           </div>
         </div>
       )}

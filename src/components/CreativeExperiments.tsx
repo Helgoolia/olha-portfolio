@@ -80,7 +80,7 @@ const CreativeExperiments = () => {
         </div>
 
         {/* ПРАВКА 2: Горизонтальний скрол на мобільці, сітка на десктопі */}
-        <div className="flex overflow-x-auto pb-8 md:pb-0 md:grid md:grid-cols-3 gap-6 md:gap-10 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory scrollbar-hide">
+        <div className="flex overflow-x-auto pb-2 md:pb-0 md:grid md:grid-cols-3 gap-6 md:gap-10 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory scrollbar-hide">
           {monsters.slice(0, SHOWN).map((src, index) => (
             <div
               key={index}
@@ -105,7 +105,7 @@ const CreativeExperiments = () => {
           href={BEHANCE_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 mt-8 md:mt-10 font-body text-sm md:text-base text-primary hover:underline underline-offset-4"
+          className="inline-flex items-center gap-2 mt-4 md:mt-6 font-body text-sm md:text-base text-primary hover:underline underline-offset-4"
         >
           See the full series on Behance <ArrowRight className="w-4 h-4" />
         </a>
