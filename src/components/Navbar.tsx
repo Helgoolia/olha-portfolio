@@ -49,7 +49,9 @@ const Navbar = () => {
 
           <div className="flex items-center gap-8">
             {[
-              { label: "CV", href: "/CV.pdf" }, // Додали файл першим
+              // CV lives on Google Drive: upload a new version of that file in Drive
+              // (Manage versions) and the site shows it — no code change needed.
+              { label: "CV", href: "https://drive.google.com/file/d/15Vz1HNTDWkxyr1zDigfVWazYULq_8d58/view" },
               { label: "Work", id: "work" },
               { label: "About", id: "about" },
               { label: "Contact", id: "contact" },
