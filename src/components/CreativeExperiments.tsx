@@ -86,7 +86,7 @@ const CreativeExperiments = () => {
               key={index}
               onClick={() => openLightbox(index)}
               className={`
-                aspect-[4/3] rounded-xl overflow-hidden border border-border/40 bg-[#1A1A1A] group cursor-pointer 
+                aspect-[4/3] rounded-xl overflow-hidden border border-[#262636] bg-[#161620] group cursor-pointer 
                 flex-shrink-0 w-[85vw] sm:w-[45vw] md:w-full snap-center
                 ${inView ? "animate-fade-up" : "opacity-0"}
               `}
