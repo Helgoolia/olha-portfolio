@@ -37,8 +37,8 @@ const cardClass =
 const PhoneRow = ({ group, title }: { group: GalleryGroup; title: string }) => (
   <div>
     <Caption text={group.caption} />
-    <div className={`${cardClass} pt-6 md:p-12`}>
-      <div className="flex md:justify-center gap-4 md:gap-12 lg:gap-16 overflow-x-auto md:overflow-visible px-6 pb-6 md:px-0 md:pb-0 snap-x snap-mandatory scrollbar-hide">
+    <div className={`${cardClass} md:p-12`}>
+      <div className="flex md:justify-center gap-4 md:gap-12 lg:gap-16 overflow-x-auto md:overflow-visible px-6 py-6 md:p-0 snap-x snap-mandatory scrollbar-hide">
         {group.images.map((src, i) => (
           <div key={src} className="flex-shrink-0 w-[62vw] sm:w-[40vw] md:w-[30%] md:max-w-[300px] snap-center">
             <Phone src={src} alt={`${title} — ${group.caption ?? "screen"} ${i + 1}`} />
@@ -128,7 +128,7 @@ const WideCard = ({ group, title }: { group: GalleryGroup; title: string }) => (
   <div>
     <Caption text={group.caption} />
     <div className={`${cardClass} p-4 md:p-12`}>
-      <Img src={group.images[0]} alt={`${title} — ${group.caption ?? "section"}`} className={PAGE_RADIUS} />
+      <Img src={group.images[0]} alt={`${title} — ${group.caption ?? "section"}`} className={group.bare ? "" : PAGE_RADIUS} />
     </div>
   </div>
 );
@@ -142,8 +142,13 @@ const StatesRow = ({ group, title }: { group: GalleryGroup; title: string }) => 
         {group.images.map((src, i) => (
           <div
             key={src}
-            className="min-w-0 mx-auto md:mx-0 md:basis-0 w-[var(--mw)] md:w-auto"
-            style={{ flexGrow: group.w?.[i] ?? 1, ["--mw" as string]: `${((group.w?.[i] ?? 1) / Math.max(...(group.w ?? [1]))) * 100}%` }}
+            className="min-w-0 mx-auto md:mx-0 md:basis-0 w-[var(--mw)] md:w-auto -mt-[var(--tt)] md:mt-0"
+            style={{
+              flexGrow: group.w?.[i] ?? 1,
+              ["--mw" as string]: `${((group.w?.[i] ?? 1) / Math.max(...(group.w ?? [1]))) * 100}%`,
+              // Stacked on phones: drop the empty transparent top of bottom-aligned frames.
+              ["--tt" as string]: `${((group.trimTop?.[i] ?? 0) / (group.w?.[i] ?? 1)) * 100}%`,
+            }}
           >
             <Img src={src} alt={`${title} — ${group.caption ?? "state"} ${i + 1}`} className={group.rounded ? PAGE_RADIUS : ""} />
           </div>

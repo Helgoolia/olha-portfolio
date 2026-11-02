@@ -32,8 +32,15 @@ const Navbar = () => {
           {/* Кнопка з ЛОГОТИПОМ */}
           <button
             onClick={() => {
+              if (location.pathname === "/") {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                return;
+              }
               navigate("/");
-              window.scrollTo({ top: 0, behavior: "smooth" });
+              // Wait for the home page to render, then jump to the hero.
+              requestAnimationFrame(() =>
+                requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior })),
+              );
             }}
             className="flex items-center hover:opacity-80 transition-opacity"
           >
