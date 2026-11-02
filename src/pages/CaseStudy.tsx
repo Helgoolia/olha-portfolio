@@ -86,8 +86,8 @@ const CaseStudy = () => {
                   {project.problem}
                 </p>
               </div>
-              <div className="grid grid-cols-2 gap-x-4 gap-y-6">
-                <div className="col-span-2">
+              <div className="grid gap-6">
+                <div>
                   <h3 className="text-[11px] font-body uppercase tracking-[0.2em] text-primary mb-2">
                     Scope
                   </h3>
@@ -124,7 +124,7 @@ const CaseStudy = () => {
         {/* СЕКЦІЯ РІШЕНЬ + ФІНАЛЬНІ ОГЛЯДИ */}
         <div
           ref={decisionsRef}
-          className={`max-w-7xl mx-auto px-6 mb-20 ${decisionsInView ? "animate-fade-up" : "opacity-0"}`}
+          className={`max-w-7xl mx-auto px-6 mb-10 md:mb-12 ${decisionsInView ? "animate-fade-up" : "opacity-0"}`}
         >
           <h2 className="text-2xl md:text-3xl font-heading font-bold mb-8">
             Key Design Decisions
