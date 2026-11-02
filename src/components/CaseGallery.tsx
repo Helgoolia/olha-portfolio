@@ -60,7 +60,7 @@ const PhoneRow = ({ group, title }: { group: GalleryGroup; title: string }) => {
               >
                 <Phone src={src} alt={`${title} — ${label?.after ?? group.caption ?? "screen"} ${i + 1}`} />
                 {label && (
-                  <div className="mt-4 text-center font-body leading-snug">
+                  <div className="mt-4 text-left font-body leading-snug">
                     {label.before && (
                       <p className="text-xs text-muted-foreground/70 line-through decoration-muted-foreground/50">
                         {label.before}
