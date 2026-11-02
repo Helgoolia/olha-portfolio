@@ -37,6 +37,10 @@ export interface GalleryGroup {
   w?: number[];
   /** `states` only: round the corners (for section-sized states, not popups with their own shape). */
   rounded?: boolean;
+  /** `states` only: empty transparent px at the top of each image, hidden when stacked on phones. */
+  trimTop?: number[];
+  /** `wide` only: no extra corner rounding (image already has its own shapes). */
+  bare?: boolean;
 }
 
 const md = (n: string) => `/projects/MyDaily/${n}.webp`;
@@ -166,8 +170,8 @@ export const projects: Project[] = [
     gallery: [
       { caption: "Full page", kind: "page", images: [lg("00-page")], preview: [lg("00-page-preview-top"), lg("00-page-preview-fade")] },
       { caption: "Menu overlay", kind: "wide", images: [lg("03-section")] },
-      { caption: "Floating CTA: write to us → letter sent", kind: "states", images: [lg("01-1-state"), lg("01-2-state")], w: [792, 792] },
-      { caption: "Floating CTA: order a call → confirmed", kind: "states", images: [lg("02-1-state"), lg("02-2-state")], w: [792, 792] },
+      { caption: "Floating CTA: write to us → letter sent", kind: "states", images: [lg("01-1-state"), lg("01-2-state")], w: [792, 792], trimTop: [0, 380] },
+      { caption: "Floating CTA: order a call → confirmed", kind: "states", images: [lg("02-1-state"), lg("02-2-state")], w: [792, 792], trimTop: [0, 164] },
       { caption: "Our Expertise: practice areas & process", kind: "wide", images: [lg("04-section")] },
       { caption: "Trusted Experts", kind: "wide", images: [lg("05-section")] },
       { caption: "Inner page: free consultation booking", kind: "wide", images: [lg("06-page")] },
@@ -224,7 +228,7 @@ export const projects: Project[] = [
       { caption: "Form states: error · filled · success", kind: "states", images: [ph("02-1-state"), ph("02-2-state"), ph("02-3-state")], w: [942, 942, 942] },
       { caption: "Leave a review → Thank you", kind: "states", images: [ph("03-1-state"), ph("03-2-state")], w: [1800, 708] },
       { caption: "Inner page: Privacy Policy", kind: "wide", images: [ph("04-page")] },
-      { caption: "Responsive: 1440 · 1024 · 768 · 393", kind: "wide", images: [ph("05-responsive")] },
+      { caption: "Responsive: 1440 · 1024 · 768 · 393", kind: "wide", images: [ph("05-responsive")], bare: true },
       { caption: "Mobile: home, menu & review", images: [ph("06-1-phone"), ph("06-2-phone"), ph("06-3-phone")] },
       { caption: "Mobile: inner page", images: [ph("07-1-phone"), ph("07-2-phone")] },
     ],
