@@ -37,8 +37,8 @@ const cardClass =
 const PhoneRow = ({ group, title }: { group: GalleryGroup; title: string }) => (
   <div>
     <Caption text={group.caption} />
-    <div className={`${cardClass} py-6 md:p-12`}>
-      <div className="flex md:justify-center gap-4 md:gap-12 lg:gap-16 overflow-x-auto md:overflow-visible px-6 md:px-0 snap-x snap-mandatory scrollbar-hide">
+    <div className={`${cardClass} pt-6 md:p-12`}>
+      <div className="flex md:justify-center gap-4 md:gap-12 lg:gap-16 overflow-x-auto md:overflow-visible px-6 pb-6 md:px-0 md:pb-0 snap-x snap-mandatory scrollbar-hide">
         {group.images.map((src, i) => (
           <div key={src} className="flex-shrink-0 w-[62vw] sm:w-[40vw] md:w-[30%] md:max-w-[300px] snap-center">
             <Phone src={src} alt={`${title} — ${group.caption ?? "screen"} ${i + 1}`} />
@@ -127,12 +127,8 @@ const PageCard = ({ group, title }: { group: GalleryGroup; title: string }) => {
 const WideCard = ({ group, title }: { group: GalleryGroup; title: string }) => (
   <div>
     <Caption text={group.caption} />
-    <div className={`${cardClass} py-5 md:p-12 overflow-x-auto md:overflow-visible scrollbar-hide`}>
-      <div className="px-5 md:px-0 w-max md:w-auto">
-        <div className="w-[760px] md:w-auto">
-          <Img src={group.images[0]} alt={`${title} — ${group.caption ?? "section"}`} className={PAGE_RADIUS} />
-        </div>
-      </div>
+    <div className={`${cardClass} p-4 md:p-12`}>
+      <Img src={group.images[0]} alt={`${title} — ${group.caption ?? "section"}`} className={PAGE_RADIUS} />
     </div>
   </div>
 );
@@ -144,7 +140,11 @@ const StatesRow = ({ group, title }: { group: GalleryGroup; title: string }) => 
     <div className={`${cardClass} p-6 md:p-12`}>
       <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8">
         {group.images.map((src, i) => (
-          <div key={src} className="min-w-0 md:basis-0" style={{ flexGrow: group.w?.[i] ?? 1 }}>
+          <div
+            key={src}
+            className="min-w-0 mx-auto md:mx-0 md:basis-0 w-[var(--mw)] md:w-auto"
+            style={{ flexGrow: group.w?.[i] ?? 1, ["--mw" as string]: `${((group.w?.[i] ?? 1) / Math.max(...(group.w ?? [1]))) * 100}%` }}
+          >
             <Img src={src} alt={`${title} — ${group.caption ?? "state"} ${i + 1}`} className={group.rounded ? PAGE_RADIUS : ""} />
           </div>
         ))}
@@ -195,8 +195,7 @@ const CaseGallery = ({
       {flow && (
         <div>
           <Caption text={flowCaption ?? "User flow"} />
-          <div className={`${cardClass} py-5 md:p-12 overflow-x-auto md:overflow-visible scrollbar-hide`}>
-            <div className="px-5 md:px-0 w-max md:w-auto"><div className="w-[860px] md:w-auto">
+          <div className={`${cardClass} p-4 md:p-12`}>
             <img
               src={flow}
               alt={`${title} — user flow`}
@@ -204,7 +203,6 @@ const CaseGallery = ({
               decoding="async"
               className="w-full h-auto"
             />
-            </div></div>
           </div>
         </div>
       )}
