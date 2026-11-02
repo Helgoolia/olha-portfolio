@@ -145,6 +145,16 @@ const CaseStudy = () => {
             ))}
           </div>
 
+          {project.behance && (
+            <a
+              href={project.behance}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-6 md:mt-8 font-body text-sm md:text-base text-primary hover:underline underline-offset-4"
+            >
+              See the full case study on Behance <ArrowRight className="w-4 h-4" />
+            </a>
+          )}
         </div>
 
         {/* НАВІГАЦІЯ ВНИЗУ */}

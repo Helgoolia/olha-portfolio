@@ -13,6 +13,8 @@ export interface Project {
   decisions: string[];
   /** Behance-style cover, 1920×1500. Used on the home card and as the case hero. */
   cover: string;
+  /** Full case study on Behance. */
+  behance?: string;
   /** Optional user flow / structure diagram, shown before the gallery. */
   flow?: string;
   /** Caption above the flow. Default: "User flow". */
@@ -72,6 +74,7 @@ export const projects: Project[] = [
       "City and planet views connect personal progress to a shared goal",
       "Edge cases designed up front: no internet, location off, deleted accounts",
     ],
+    behance: "https://www.behance.net/gallery/257722479/Nava-Walking-Game-Mobile-App",
     cover: "/projects/Nava/cover.webp",
     flow: nv("00-flow"),
     flowCaption: "Core loop",
@@ -103,6 +106,7 @@ export const projects: Project[] = [
       "Six colour modes in the design system, one per task type (Focus, Urgent, Routine…)",
       "Sharing built in: a visit card from the profile (PDF) and logs of completed tasks",
     ],
+    behance: "https://www.behance.net/gallery/249149985/My-Daily-Productivity-Mobile-App",
     cover: "/projects/MyDaily/cover.webp",
     flow: md("00-flow"),
     gallery: [
@@ -136,6 +140,7 @@ export const projects: Project[] = [
       "An editable summary before confirming the booking",
       "After booking: a Pending status and Cancel right in My Places",
     ],
+    behance: "https://www.behance.net/gallery/223127429/Book-Bite-Restaurant-Booking-App",
     cover: "/projects/book-and-bite/cover.webp",
     flow: bb("00-flow"),
     gallery: [
@@ -166,6 +171,7 @@ export const projects: Project[] = [
       "Consultation booked in three steps on a separate page, with progress shown",
       "On mobile, content is stacked and the floating buttons stay in reach",
     ],
+    behance: "https://www.behance.net/gallery/154202847/Legal-Co-Law-Firm-Landing-Page",
     cover: "/projects/LawyerLP/cover.webp",
     gallery: [
       { caption: "Full page", kind: "page", images: [lg("00-page")], preview: [lg("00-page-preview-top"), lg("00-page-preview-fade")] },
@@ -194,6 +200,7 @@ export const projects: Project[] = [
       "Past winners: pick a name to see the work, switch challenges with the arrows",
       "FAQ as an accordion keeps the rules out of the way",
     ],
+    behance: "https://www.behance.net/gallery/214282253/Kafka-Art-Society-Art-Contest-Landing-Page",
     cover: "/projects/Kafka/cover.webp",
     gallery: [
       { caption: "Full page", kind: "page", images: [kf("00-page")], preview: [kf("00-page-preview-top"), kf("00-page-preview-fade")] },
@@ -221,6 +228,7 @@ export const projects: Project[] = [
       "Review form: only the initial shown publicly, optional photo, character counter",
       "Each of the four breakpoints has its own layout, not just a shrink",
     ],
+    behance: "https://www.behance.net/gallery/137317641/Pure-Hair-Hair-Salon-Landing-Page",
     cover: "/projects/PureHair/cover.webp",
     gallery: [
       { caption: "Full page", kind: "page", images: [ph("00-page")], preview: [ph("00-page-preview-top"), ph("00-page-preview-fade")] },
