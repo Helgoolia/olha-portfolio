@@ -37,20 +37,88 @@ const cardClass =
   "rounded-xl md:rounded-2xl bg-secondary/50 border border-border/40";
 
 /** Several phones in one row, on one background. Scrolls sideways on mobile. */
-const PhoneRow = ({ group, title }: { group: GalleryGroup; title: string }) => (
-  <div>
-    <Caption text={group.caption} />
-    <div className={`${cardClass} md:p-12`}>
-      <div className="flex md:justify-center gap-6 md:gap-12 lg:gap-16 overflow-x-auto md:overflow-visible p-5 md:p-0 snap-x snap-mandatory scrollbar-hide">
-        {group.images.map((src, i) => (
-          <div key={src} className="flex-shrink-0 w-[62vw] sm:w-[40vw] md:w-[30%] md:max-w-[300px] snap-center">
-            <Phone src={src} alt={`${title} — ${group.caption ?? "screen"} ${i + 1}`} />
-          </div>
-        ))}
+const PhoneRow = ({ group, title }: { group: GalleryGroup; title: string }) => {
+  // Up to 3 phones share the row; 4–5 get narrower so they still fit on one line on desktop.
+  const many = group.images.length > 3;
+  return (
+    <div>
+      <Caption text={group.caption} />
+      <div className={`${cardClass} md:p-12`}>
+        <div
+          className={`flex md:justify-center overflow-x-auto md:overflow-visible p-5 md:p-0 snap-x snap-mandatory scrollbar-hide ${
+            many ? "gap-6 md:gap-5 lg:gap-8" : "gap-6 md:gap-12 lg:gap-16"
+          }`}
+        >
+          {group.images.map((src, i) => {
+            const label = group.labels?.[i];
+            return (
+              <div
+                key={src}
+                className={`flex-shrink-0 snap-center w-[62vw] sm:w-[40vw] ${
+                  many ? "md:w-[18%] md:max-w-[210px]" : "md:w-[30%] md:max-w-[300px]"
+                }`}
+              >
+                <Phone src={src} alt={`${title} — ${label?.after ?? group.caption ?? "screen"} ${i + 1}`} />
+                {label && (
+                  <div className="mt-4 text-center font-body leading-snug">
+                    {label.before && (
+                      <p className="text-xs text-muted-foreground/70 line-through decoration-muted-foreground/50">
+                        {label.before}
+                      </p>
+                    )}
+                    <p className="mt-1 text-sm text-foreground">{label.after}</p>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
-  </div>
+  );
+};
+
+const Swatch = ({ hex }: { hex: string }) => (
+  <span
+    className="inline-block w-4 h-4 rounded-[4px] flex-shrink-0 ring-1 ring-white/15"
+    style={{ backgroundColor: hex }}
+  />
 );
+
+/** Design tokens as a native table, so it uses the site's own type and surfaces. */
+const TokensCard = ({ group }: { group: GalleryGroup }) => {
+  const Table = ({ head, rows }: { head: [string, string]; rows: NonNullable<GalleryGroup["tokens"]> }) => (
+    <div className="min-w-0">
+      <div className="grid grid-cols-[1fr_1fr] gap-4 pb-3 mb-1 border-b border-border/60 text-[11px] uppercase tracking-[0.15em] text-muted-foreground font-body">
+        <span>{head[0]}</span>
+        <span>{head[1]}</span>
+      </div>
+      {rows.map((t) => (
+        <div key={t.name} className="grid grid-cols-[1fr_1fr] gap-4 py-2.5 border-b border-border/30 text-sm font-body items-center">
+          <span className="flex items-center gap-3 text-foreground min-w-0">
+            <Swatch hex={t.hex} />
+            <span className="truncate">{t.name}</span>
+          </span>
+          <span className="text-muted-foreground">{t.role}</span>
+        </div>
+      ))}
+    </div>
+  );
+  return (
+    <div>
+      <Caption text={group.caption} />
+      <div className={`${cardClass} ${PAD}`}>
+        {group.note && (
+          <p className="text-muted-foreground font-body text-sm md:text-base leading-relaxed max-w-3xl mb-8">{group.note}</p>
+        )}
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14">
+          {group.tokens && <Table head={["Nava token", "shadcn/ui"]} rows={group.tokens} />}
+          {group.extraTokens && <Table head={["Product-specific", "Used for"]} rows={group.extraTokens} />}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 /** One phone in its own card. Two singles in a row sit side by side. */
 const SingleCard = ({ group, title }: { group: GalleryGroup; title: string }) => (
@@ -166,13 +234,14 @@ type Row =
   | { kind: "page"; group: GalleryGroup }
   | { kind: "wide"; group: GalleryGroup }
   | { kind: "states"; group: GalleryGroup }
+  | { kind: "tokens"; group: GalleryGroup }
   | { kind: "singles"; groups: GalleryGroup[] };
 
 const toRows = (groups: GalleryGroup[]): Row[] => {
   const rows: Row[] = [];
   for (const g of groups) {
     const last = rows[rows.length - 1];
-    if (g.kind === "page" || g.kind === "wide" || g.kind === "states") rows.push({ kind: g.kind, group: g } as Row);
+    if (g.kind === "page" || g.kind === "wide" || g.kind === "states" || g.kind === "tokens") rows.push({ kind: g.kind, group: g } as Row);
     else if (g.images.length > 1) rows.push({ kind: "row", group: g });
     else if (last?.kind === "singles" && last.groups.length < 2) last.groups.push(g);
     else rows.push({ kind: "singles", groups: [g] });
@@ -216,7 +285,9 @@ const CaseGallery = ({
       )}
 
       {toRows(groups).map((row, i) =>
-        row.kind === "page" ? (
+        row.kind === "tokens" ? (
+          <TokensCard key={i} group={row.group} />
+        ) : row.kind === "page" ? (
           <PageCard key={i} group={row.group} title={title} />
         ) : row.kind === "wide" ? (
           <WideCard key={i} group={row.group} title={title} />
