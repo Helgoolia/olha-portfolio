@@ -32,7 +32,15 @@ export interface GalleryGroup {
    * wide — one wide image (section, responsive lineup) at full card width;
    * states — cards side by side, each sized by its real width (see `w`).
    */
-  kind?: "phones" | "page" | "wide" | "states";
+  kind?: "phones" | "page" | "wide" | "states" | "tokens";
+  /** `phones` only: a two-line label under each phone — what it replaced (struck through) and what it is now. */
+  labels?: { before?: string; after: string }[];
+  /** `tokens` only: design tokens shown as a native table. */
+  tokens?: { hex: string; name: string; role: string }[];
+  /** `tokens` only: product-specific tokens (second column). */
+  extraTokens?: { hex: string; name: string; role: string }[];
+  /** `tokens` only: one-line explanation above the table. */
+  note?: string;
   /** `page` only: collapsed top of the page with the fade baked in. */
   preview?: string[];
   /** Natural widths of `images`, used by `states` to keep one scale. */
@@ -79,6 +87,17 @@ export const projects: Project[] = [
     flow: nv("00-flow"),
     flowCaption: "Core loop",
     gallery: [
+      {
+        caption: "Before → after: five tools, one app",
+        images: [nv("09-1-phone"), nv("09-2-phone"), nv("09-3-phone"), nv("09-4-phone"), nv("09-5-phone")],
+        labels: [
+          { before: "Screenshots to a curator", after: "Counted automatically" },
+          { before: "Audio bot", after: "Player inside the walk" },
+          { before: "Quest channel", after: "Quest calendar" },
+          { before: "Results posted in chat", after: "Live rating" },
+          { before: "Community chat", after: "Chats and feed" },
+        ],
+      },
       { caption: "Onboarding", images: [nv("01-1-phone"), nv("01-2-phone"), nv("01-3-phone")] },
       { caption: "Home → walk", images: [nv("02-1-phone"), nv("02-2-phone"), nv("02-3-phone")] },
       { caption: "Audio practices", images: [nv("03-1-phone"), nv("03-2-phone")] },
@@ -87,6 +106,30 @@ export const projects: Project[] = [
       { caption: "My city, planet & city ranking", images: [nv("06-1-phone"), nv("06-2-phone"), nv("06-3-phone")] },
       { caption: "Community: feed, city chat, profile", images: [nv("07-1-phone"), nv("07-2-phone"), nv("07-3-phone")] },
       { caption: "Edge cases", images: [nv("08-1-phone"), nv("08-2-phone"), nv("08-3-phone")] },
+      {
+        caption: "Design system: tokens mapped to shadcn/ui",
+        kind: "tokens",
+        images: [],
+        note: "The brief asked for a system based on shadcn/ui. Variables follow its roles and naming, so the design maps directly onto a React + Tailwind component library; product-specific tokens are added only where the brand and walking states need them.",
+        tokens: [
+          { hex: "#090E1A", name: "Surface/Background", role: "background" },
+          { hex: "#171C31", name: "Surface/Card", role: "card" },
+          { hex: "#111827", name: "Surface/Popover", role: "popover" },
+          { hex: "#1D233A", name: "Surface/Secondary Fill", role: "secondary · muted" },
+          { hex: "#E8F4F8", name: "Content/Foreground", role: "foreground" },
+          { hex: "#7984A0", name: "Content/Muted Foreground", role: "muted-foreground" },
+          { hex: "#8926ED", name: "Brand/Primary", role: "primary" },
+          { hex: "#EF4444", name: "Feedback/Destructive", role: "destructive" },
+          { hex: "#5967A3", name: "Utility/Border", role: "border · input" },
+          { hex: "#22C7F5", name: "Utility/Ring", role: "ring" },
+        ],
+        extraTokens: [
+          { hex: "#E5682A", name: "Brand/Secondary", role: "Accent CTA, Orange Sneakers tier" },
+          { hex: "#10B981", name: "Feedback/Success", role: "Goal reached, walk counted" },
+          { hex: "#E0B325", name: "Feedback/Warning", role: "At risk, below pace" },
+          { hex: "#1F2945", name: "Utility/Input Background", role: "Input fill, separate from Border" },
+        ],
+      },
     ],
   },
   {
