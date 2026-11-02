@@ -75,12 +75,12 @@ const WorkSection = () => {
 
   return (
     /* py-16 для мобілки, py-32 для десктопу */
-    <section id="work" className="py-16 md:py-32 px-6">
+    <section id="work" className="pt-8 pb-16 md:pt-16 md:pb-32 px-6">
       <div className="max-w-7xl mx-auto">
         <div
           ref={ref}
           /* mb-10 для мобілки, mb-16 для десктопу */
-          className={`mb-10 md:mb-16 ${inView ? "animate-fade-up" : "opacity-0"}`}
+          className={`mb-8 md:mb-12 ${inView ? "animate-fade-up" : "opacity-0"}`}
         >
           <h2 className="text-2xl md:text-4xl font-heading font-bold">
             Selected Work
