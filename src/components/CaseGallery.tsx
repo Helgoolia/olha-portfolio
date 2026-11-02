@@ -30,6 +30,9 @@ const Caption = ({ text }: { text?: string }) =>
     </h3>
   ) : null;
 
+/** Same inner padding for every card: 20px on phones, 48px from tablet up. */
+const PAD = "p-5 md:p-12";
+
 const cardClass =
   "rounded-xl md:rounded-2xl bg-secondary/50 border border-border/40";
 
@@ -38,7 +41,7 @@ const PhoneRow = ({ group, title }: { group: GalleryGroup; title: string }) => (
   <div>
     <Caption text={group.caption} />
     <div className={`${cardClass} md:p-12`}>
-      <div className="flex md:justify-center gap-4 md:gap-12 lg:gap-16 overflow-x-auto md:overflow-visible px-6 py-6 md:p-0 snap-x snap-mandatory scrollbar-hide">
+      <div className="flex md:justify-center gap-6 md:gap-12 lg:gap-16 overflow-x-auto md:overflow-visible p-5 md:p-0 snap-x snap-mandatory scrollbar-hide">
         {group.images.map((src, i) => (
           <div key={src} className="flex-shrink-0 w-[62vw] sm:w-[40vw] md:w-[30%] md:max-w-[300px] snap-center">
             <Phone src={src} alt={`${title} — ${group.caption ?? "screen"} ${i + 1}`} />
@@ -53,7 +56,7 @@ const PhoneRow = ({ group, title }: { group: GalleryGroup; title: string }) => (
 const SingleCard = ({ group, title }: { group: GalleryGroup; title: string }) => (
   <div className="flex flex-col">
     <Caption text={group.caption} />
-    <div className={`${cardClass} p-6 md:p-12 flex-grow flex items-center justify-center`}>
+    <div className={`${cardClass} ${PAD} flex-grow flex items-center justify-center`}>
       <div className="w-[62vw] sm:w-[40vw] md:w-full md:max-w-[300px]">
         <Phone src={group.images[0]} alt={`${title} — ${group.caption ?? "screen"}`} />
       </div>
@@ -92,7 +95,7 @@ const PageCard = ({ group, title }: { group: GalleryGroup; title: string }) => {
   return (
     <div>
       <Caption text={group.caption} />
-      <div className={`${cardClass} p-6 md:p-12`} style={{ overflowAnchor: "none" }}>
+      <div className={`${cardClass} ${PAD}`} style={{ overflowAnchor: "none" }}>
         {group.preview ? (
           <>
             {/* Collapsed: pre-rendered top of the page with the fade baked in
@@ -127,7 +130,7 @@ const PageCard = ({ group, title }: { group: GalleryGroup; title: string }) => {
 const WideCard = ({ group, title }: { group: GalleryGroup; title: string }) => (
   <div>
     <Caption text={group.caption} />
-    <div className={`${cardClass} p-4 md:p-12`}>
+    <div className={`${cardClass} ${PAD}`}>
       <Img src={group.images[0]} alt={`${title} — ${group.caption ?? "section"}`} className={group.bare ? "" : PAGE_RADIUS} />
     </div>
   </div>
@@ -137,7 +140,7 @@ const WideCard = ({ group, title }: { group: GalleryGroup; title: string }) => (
 const StatesRow = ({ group, title }: { group: GalleryGroup; title: string }) => (
   <div>
     <Caption text={group.caption} />
-    <div className={`${cardClass} p-6 md:p-12`}>
+    <div className={`${cardClass} ${PAD}`}>
       <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8">
         {group.images.map((src, i) => (
           <div
@@ -200,7 +203,7 @@ const CaseGallery = ({
       {flow && (
         <div>
           <Caption text={flowCaption ?? "User flow"} />
-          <div className={`${cardClass} p-4 md:p-12`}>
+          <div className={`${cardClass} ${PAD}`}>
             <img
               src={flow}
               alt={`${title} — user flow`}
