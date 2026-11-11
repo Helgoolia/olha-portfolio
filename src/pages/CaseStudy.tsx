@@ -17,7 +17,6 @@ const CaseStudy = () => {
   const nextProject =
     projectIndex < projects.length - 1 ? projects[projectIndex + 1] : null;
 
-  const [heroRef, heroInView] = useInView(0.1);
   const [contentRef, contentInView] = useInView(0.1);
   const [decisionsRef, decisionsInView] = useInView(0.1);
 
@@ -61,11 +60,15 @@ const CaseStudy = () => {
 
         {/* HERO: Behance cover, same as the home card */}
         <div
-          ref={heroRef}
-          className={`max-w-7xl mx-auto px-6 mb-16 md:mb-24 ${heroInView ? "animate-fade-up" : "opacity-0"}`}
+          className="max-w-7xl mx-auto px-6 mb-16 md:mb-24 animate-fade-up"
         >
           <img
             src={project.cover}
+            srcSet={`${project.cover.replace(/\.webp$/, "-960.webp")} 960w, ${project.cover.replace(/\.webp$/, "-1280.webp")} 1280w, ${project.cover} 1920w`}
+            sizes="(min-width: 1280px) 1232px, 100vw"
+            width={1920}
+            height={1500}
+            fetchPriority="high"
             alt={`${project.title} cover`}
             className="w-full h-auto aspect-[1920/1500] object-cover rounded-xl md:rounded-2xl border border-border/40"
           />

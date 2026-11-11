@@ -28,6 +28,10 @@ const ProjectCard = ({
           <div className="aspect-[1920/1500] bg-[#1A1A1A] overflow-hidden">
             <img
               src={coverImage}
+              srcSet={`${coverImage.replace(/\.webp$/, "-960.webp")} 960w, ${coverImage.replace(/\.webp$/, "-1280.webp")} 1280w, ${coverImage} 1920w`}
+              sizes="(min-width: 768px) 50vw, 100vw"
+              width={1920}
+              height={1500}
               alt={`${project.title} cover`}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               loading="lazy"

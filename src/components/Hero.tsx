@@ -1,8 +1,4 @@
-import { useInView } from "@/hooks/useInView";
-
 const Hero = () => {
-  const [ref, inView] = useInView(0.1);
-
   const scrollToWork = () => {
     document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -12,12 +8,9 @@ const Hero = () => {
       {/* Glow orb */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] glow-orb animate-pulse-glow pointer-events-none opacity-50 md:opacity-100" />
 
-      <div
-        ref={ref}
-        className={`relative z-10 max-w-3xl mx-auto px-6 text-center ${
-          inView ? "animate-fade-up" : "opacity-0"
-        }`}
-      >
+      {/* Shown right away (no scroll observer): the heading is the page's
+          largest element, so waiting for JS to reveal it delayed LCP. */}
+      <div className="relative z-10 max-w-3xl mx-auto px-6 text-center animate-fade-up">
         <p className="text-[12px] md:text-sm font-body tracking-[0.2em] uppercase text-primary mb-6 md:mb-8">
           UX/UI Designer
         </p>
