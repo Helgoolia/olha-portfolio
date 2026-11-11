@@ -93,7 +93,9 @@ const CreativeExperiments = () => {
               style={{ animationDelay: `${index * 50}ms` }}
             >
               <img loading="lazy" decoding="async"
-                src={src}
+                src={src.replace(/\.webp$/, "-800.webp")}
+                width={800}
+                height={600}
                 alt={`Creative Illustration ${index + 1}`}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
