@@ -74,7 +74,7 @@ export const projects: Project[] = [
     problem:
       "The walking community ran its daily practice across five tools: a Telegram channel for news, a Telegram chat per city, a Telegram bot for audio, any step tracker plus a screenshot sent to a curator, and a Google Sheet where admins tallied the rating. Progress was hard to see, the rules (7 km at 5 km/h, a monthly 9-day quest) were easy to break without noticing, and a city's shared progress lived only in chat posts.",
     scope: "Audit of the existing journey, UX flows, UI, design system",
-    timeline: "2026 · 17 weeks (3 UX + 14 UI)",
+    timeline: "17 weeks",
     solution:
       "One app built around a daily core loop: start a walk, listen, keep the pace, earn energy, grow. Each old tool found a place inside it: distance and pace are counted automatically, the player runs inside the walk, the quest calendar replaces the channel, the rating is calculated on the server, and the city chat and feed sit one tab away. Personal energy lights up the city on a shared planet map, so every walk counts twice: for the walker and for their city.",
     decisions: [
