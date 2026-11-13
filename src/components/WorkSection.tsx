@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { projects } from "@/data/projects";
+import { projects, visibleProjects } from "@/data/projects";
 import { useInView } from "@/hooks/useInView";
 
 const ProjectCard = ({
@@ -92,7 +92,7 @@ const WorkSection = () => {
         </div>
         {/* gap-6 для мобілки, щоб картки не злипалися, але й не були занадто далеко */}
         <div className="grid md:grid-cols-2 gap-6 md:gap-10">
-          {projects.map((project, i) => (
+          {visibleProjects.map((project, i) => (
             <ProjectCard key={project.id} project={project} index={i} />
           ))}
         </div>

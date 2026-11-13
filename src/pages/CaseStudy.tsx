@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { projects } from "@/data/projects";
+import { projects, visibleProjects } from "@/data/projects";
 import { useInView } from "@/hooks/useInView";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -10,12 +10,16 @@ import { useEffect } from "react";
 const CaseStudy = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const projectIndex = projects.findIndex((p) => p.id === id);
-  const project = projects[projectIndex];
+  const project = projects.find((p) => p.id === id);
+  // Hidden cases open by direct link but don't link to other cases.
+  const navList = project && !project.hidden ? visibleProjects : [];
+  const projectIndex = navList.findIndex((p) => p.id === id);
 
-  const prevProject = projectIndex > 0 ? projects[projectIndex - 1] : null;
+  const prevProject = projectIndex > 0 ? navList[projectIndex - 1] : null;
   const nextProject =
-    projectIndex < projects.length - 1 ? projects[projectIndex + 1] : null;
+    projectIndex >= 0 && projectIndex < navList.length - 1
+      ? navList[projectIndex + 1]
+      : null;
 
   const [contentRef, contentInView] = useInView(0.1);
   const [decisionsRef, decisionsInView] = useInView(0.1);

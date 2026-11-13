@@ -15,6 +15,8 @@ export interface Project {
   cover: string;
   /** Full case study on Behance. */
   behance?: string;
+  /** Hide from the home grid and case navigation; the case page stays reachable by direct link. */
+  hidden?: boolean;
   /** Optional user flow / structure diagram, shown before the gallery. */
   flow?: string;
   /** Caption above the flow. Default: "User flow". */
@@ -200,6 +202,7 @@ export const projects: Project[] = [
   },
   {
     id: "lawyer-company",
+    hidden: true,
     title: "Legal Co.",
     description: "A law firm landing page with two always-visible ways to reach a lawyer and a step-by-step consultation booking.",
     type: "Landing Page · Concept",
@@ -229,6 +232,7 @@ export const projects: Project[] = [
   },
   {
     id: "metamorphosis",
+    hidden: true,
     title: "Kafka Art Society",
     description: "A landing page for a monthly art contest inspired by Kafka: a dark, atmospheric theme built on smoke textures and glow.",
     type: "Landing Page · Concept",
@@ -256,6 +260,7 @@ export const projects: Project[] = [
   },
   {
     id: "pure-hair-salon",
+    hidden: true,
     title: "Pure Hair",
     description: "A salon landing page designed for four breakpoints, with a one-field call-back form and reviews with photo upload.",
     type: "Landing Page · Concept",
@@ -285,3 +290,6 @@ export const projects: Project[] = [
     ],
   },
 ];
+
+/** Projects shown on the home page and in case-to-case navigation. */
+export const visibleProjects = projects.filter((p) => !p.hidden);
