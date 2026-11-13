@@ -3,15 +3,10 @@ import { useInView } from "@/hooks/useInView";
 const skills = [
   "Product Design",
   "Design Systems",
-  "UI Design",
-  "Visual Design",
   "User Flows",
-  "Information Architecture",
-  "Wireframing",
   "Prototyping",
   "Mobile Design",
   "SaaS Design",
-  "Design QA",
   "Figma",
 ];
 
@@ -34,25 +29,27 @@ const AboutSection = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground font-body leading-[1.7] mb-8">
               <p>
-                I'm Olha, a UX/UI designer based in Kyiv, Ukraine. I design
-                mobile and web products end to end, from flows to
+                I'm Olha, a product designer based in Kyiv, Ukraine. I design
+                mobile and web products end to end — from user flows to
                 production-ready UI and design systems.
               </p>
               <p>
-                Most recently I spent eight months at MW MEDIA Global, a German
-                startup, designing two AI SaaS products and their design system
-                from scratch. That work is under NDA; happy to walk through it
-                in an interview.
+                Most recently I designed Nava, a walking app, from first flows
+                to a shadcn/ui-based design system (freelance, 2026). Before
+                that, I spent eight months at MW MEDIA Global, a German startup,
+                designing two AI SaaS products and their design system from
+                scratch. That work is under NDA; happy to walk through it in an
+                interview.
               </p>
               <p>
-                Before UX, I spent years as a vector illustrator — that craft
-                background shapes how I think about visual composition,
-                attention to detail, and the emotional tone of every screen.
+                Before UX, I spent years as a vector illustrator — it shaped my
+                eye for composition, detail, and the emotional tone of every
+                screen.
               </p>
               <p>
-                I work closely with PMs and engineers, and I care deeply about
-                organized Figma files and handoffs that actually make sense to
-                developers.
+                I work closely with PMs and engineers and care about organized
+                Figma files and handoffs that make sense to developers. I also
+                prototype with AI — I built this site myself.
               </p>
             </div>
 
@@ -72,7 +69,7 @@ const AboutSection = () => {
           <div className="flex justify-center order-first md:order-none">
             <img
               src="/avatar.webp" 
-              alt="Olha - UX/UI Designer"
+              alt="Olha - Product Designer"
               className="w-56 h-56 md:w-80 md:h-80 rounded-full object-cover border border-border/40"
             />
           </div>

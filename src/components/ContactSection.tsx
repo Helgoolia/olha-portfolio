@@ -33,8 +33,8 @@ const ContactSection = () => {
             Let's Work Together
           </h2>
           <p className="text-muted-foreground font-body text-lg mb-8 md:mb-12">
-            Open to full-time product design roles at startups and tech
-            companies.
+            Open to full-time product design roles at startups and product
+            teams.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6">

@@ -12,7 +12,7 @@ const Hero = () => {
           largest element, so animating it in delayed LCP and Speed Index. */}
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
         <p className="text-[12px] md:text-sm font-body tracking-[0.2em] uppercase text-primary mb-6 md:mb-8">
-          UX/UI Designer
+          Product Designer
         </p>
 
         {/* Адаптивний заголовок: менший на мобільних, великий на десктопі */}
@@ -24,8 +24,8 @@ const Hero = () => {
 
         {/* Опис з обмеженою шириною на мобільних для кращих падінгів */}
         <p className="text-base md:text-[20px] text-muted-foreground font-body leading-relaxed max-w-[280px] sm:max-w-xl mx-auto mb-10 md:mb-12">
-          I design scalable digital products — SaaS interfaces, design systems,
-          and mobile experiences.
+          I design mobile and SaaS products for early-stage startups — from
+          user flows to a dev-ready design system.
         </p>
 
         <button
