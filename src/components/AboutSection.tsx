@@ -49,7 +49,8 @@ const AboutSection = () => {
               <p>
                 I work closely with PMs and engineers and care about organized
                 Figma files and handoffs that make sense to developers. I also
-                prototype with AI — I built this site myself.
+                prototype with AI — I built this site with AI and now maintain it
+                with Claude as my coding agent.
               </p>
             </div>
 

@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import WorkSection from "@/components/WorkSection";
+import AiWorkflowSection from "@/components/AiWorkflowSection";
 import CreativeExperiments from "@/components/CreativeExperiments";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
@@ -13,6 +14,7 @@ const Index = () => {
       <main className="flex-grow w-full overflow-x-hidden">
         <Hero />
         <WorkSection />
+        <AiWorkflowSection />
         <CreativeExperiments />
         <AboutSection />
         <ContactSection />
